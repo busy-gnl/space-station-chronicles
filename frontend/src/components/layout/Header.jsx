@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "../../pages/Home";
+import Home from "../../pages/Home/Home";
 import Map from "../../pages/Map";
 import Timeline from "../../pages/Timeline";
 import Chronicle from "../../pages/Chronicle";
@@ -12,6 +12,7 @@ export default function Header() {
         <header>
           <div>
             <img
+              className="logo"
               src="../../public/images/logos/noun-international-space-station2-5408602.png"
               alt=""
             />

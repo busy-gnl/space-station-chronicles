@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Timer.css";
 
 function Timer() {
   const datePutIntoOrbit = new Date("1998-11-20T06:20:00Z");
@@ -26,7 +27,14 @@ function Timer() {
     };
   }, []);
 
-  return <div className="timer-iss">{elapsedTime}</div>;
+  return (
+    <div className="timer-div">
+      <h2 className="timer-h2">
+        Temps écoulé depuis la mise en orbite du premier module de l'ISS
+      </h2>
+      <div className="timer-iss">{elapsedTime}</div>
+    </div>
+  );
 }
 
 export default Timer;

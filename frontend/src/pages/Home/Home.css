@@ -1,0 +1,10 @@
+/* Home.jsx */
+
+.timer-section{
+    display: flex;
+    justify-content: space-around
+}
+
+.iss-orbite{
+    width: 40vw;
+}
