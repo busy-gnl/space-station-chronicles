@@ -29,9 +29,7 @@ function Timer() {
 
   return (
     <div className="timer-div">
-      <h2 className="timer-h2">
-        Temps écoulé depuis la mise en orbite du premier module de l'ISS
-      </h2>
+      <h3 className="timer-h3">Temps passé dans l'espace par l'ISS :</h3>
       <div className="timer-iss">{elapsedTime}</div>
     </div>
   );

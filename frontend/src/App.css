@@ -12,8 +12,8 @@
 
 .App{
   background-color: var(--background-color);
-  background: url(../public/images/milky-way.jpg) center/cover ;
-  height: 100vh;
+  background: url(../public/images/milky-way.jpg) center/cover repeat;
+  height: 100%;
 }
 
 body{
@@ -28,9 +28,10 @@ header{
   width: 100vw;
 }
 
-h1{
+h1, h2, h3{
+  color: var(--font-color);
   text-align: center;
-  margin: 1rem 1rem;
+  margin: 2rem 2rem;
 }
 
 .logo{
