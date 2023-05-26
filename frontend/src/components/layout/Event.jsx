@@ -8,7 +8,7 @@ export default function Event({ date, title, description, picture }) {
       <h3>Titre : {title}</h3>
       <div>
         <p>Description évènement : {description}</p>
-        <img src={picture} alt="" />
+        <img className="event-img" src={picture} alt="" />
       </div>
     </div>
   );
