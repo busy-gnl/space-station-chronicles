@@ -1,0 +1,32 @@
+/*Mobile*/
+
+:root {
+  --timeline-color: black;
+}
+
+#event-balise {
+  position: absolute;
+  background: var(--timeline-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--timeline-color);
+  left: 2em;
+}
+
+.event-div::before {
+  border-left: 4px solid var(--timeline-color);
+  content: "";
+  display: block;
+  position: absolute;
+  left: 2.5em;
+  margin-left: -3px;
+  top: 0;
+  bottom: 0rem;
+  width: 2px;
+}
+
+.event-div {
+  padding: 2rem 2rem 2rem 5rem;
+  position: relative;
+}
