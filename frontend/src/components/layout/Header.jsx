@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import Map from "../../pages/Map";
-import Timeline from "../../pages/Timeline";
+import Timeline from "../../pages/Timeline/Timeline";
 import Chronicle from "../../pages/Chronicle";
 
 export default function Header() {
