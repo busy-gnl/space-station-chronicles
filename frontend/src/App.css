@@ -70,6 +70,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   height: 10vh;
   gap: 1rem;
   background-color: var(--background-color);
