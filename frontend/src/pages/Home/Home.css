@@ -1,7 +1,7 @@
 /* Home.jsx */
 /* Mobile */
 .home-about-iss {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,12 +9,15 @@
 }
 
 .home-about-img {
-  width: 90vw;
+  width: 80vw;
   border-radius: 10px;
 }
 
 .home-intro-iss {
-  width: 80%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 0.5rem;
+  width: 80vw;
   margin: 2rem;
   text-align: center;
   color: var(--font-color);
@@ -27,8 +30,8 @@
   gap: 2rem;
 }
 
-.home-iss-orbit {
-  width: 90vw;
+.home-iss-orbit-img {
+  width: 80vw;
   border-radius: 10px;
 }
 
@@ -37,8 +40,9 @@
 /* Desktop */
 @media only screen and (min-width: 1025px) {
   .home-about-iss {
+    margin: 0 2rem;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
   .home-about-img {
@@ -50,11 +54,12 @@
   }
 
   .home-timer-section {
+    margin: 0 2rem;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
 
-  .home-iss-orbit {
+  .home-iss-orbit-img {
     width: 40vw;
   }
 }

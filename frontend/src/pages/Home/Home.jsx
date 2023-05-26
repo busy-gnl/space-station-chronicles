@@ -39,7 +39,7 @@ export default function Home() {
       <h2>Date de lancement du premier module : 20 novembre 1998</h2>
       <section className="home-timer-section">
         <img
-          className="home-iss-orbit"
+          className="home-iss-orbit-img"
           src="../../../public/images/iss-orbite.webp"
           alt="ISS en orbite"
         />
