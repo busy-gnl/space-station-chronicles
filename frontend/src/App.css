@@ -1,5 +1,6 @@
 :root{
   --background-color : black;
+  --font-color : white;
   --links-color : white;
 }
 
@@ -9,13 +10,31 @@
   padding: 0;
 }
 
-header{
+.App{
   background-color: var(--background-color);
-  color : white;
-  display: flex;
+  background: url(../public/images/milky-way.jpg) center/cover repeat;
+  height: 100%;
 }
 
-img{
+body{
+
+  color: var(--links-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+
+  display: flex;
+  width: 100vw;
+}
+
+h1, h2, h3{
+  color: var(--font-color);
+  text-align: center;
+  margin: 2rem 2rem;
+}
+
+.logo{
   width: 5vw;
 }
 
@@ -25,6 +44,8 @@ nav>ul{
 }
 
 nav>ul>li {
+  display: flex;
+  align-items: center;
   list-style-type:none ;
   margin: 1rem 1rem;
 }

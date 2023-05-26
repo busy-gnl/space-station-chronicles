@@ -1,0 +1,60 @@
+/* Home.jsx */
+/* Mobile */
+.home-about-iss {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-about-img {
+  width: 90vw;
+  border-radius: 10px;
+}
+
+.home-intro-iss {
+  width: 80%;
+  margin: 2rem;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.home-timer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-iss-orbit {
+  width: 90vw;
+  border-radius: 10px;
+}
+
+/* Tablet */
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+  .home-about-iss {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .home-about-img {
+    width: 40vw;
+  }
+
+  .intro-css {
+    width: 40%;
+  }
+
+  .home-timer-section {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .home-iss-orbit {
+    width: 40vw;
+  }
+}
