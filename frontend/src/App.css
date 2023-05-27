@@ -2,6 +2,7 @@
   --background-color: black;
   --font-color: white;
   --links-color: white;
+  --border-radius: 10px;
 }
 
 * {

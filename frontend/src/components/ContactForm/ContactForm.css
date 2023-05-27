@@ -1,0 +1,46 @@
+/* ContactForm.jsx */
+
+/* Mobile */
+.contact-form {
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
+.contact-label {
+  font-size: 1.5rem;
+  color: var(--font-color);
+}
+
+.contact-input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+.contact-button {
+  margin-left: 10%;
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--links-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+/* Tablet */
+
+/* Desktop */
+
+@media only screen and (min-width: 1025px) {
+  .contact-input {
+    width: 50%;
+  }
+}

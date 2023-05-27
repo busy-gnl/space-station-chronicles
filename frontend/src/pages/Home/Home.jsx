@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import Timer from "../../components/Timer/Timer";
+import ContactForm from "../../components/ContactForm/ContactForm";
 import "./Home.css";
 
 export default function Home() {
@@ -38,12 +39,26 @@ export default function Home() {
       </section>
       <h2>Date de lancement du premier module : 20 novembre 1998</h2>
       <section className="home-timer-section">
+        <Timer />
         <img
           className="home-iss-orbit-img"
           src="../../../public/images/iss-orbite.webp"
           alt="ISS en orbite"
         />
-        <Timer />
+      </section>
+      <h2>Live : Vue de la Terre en direct depuis l'ISS</h2>
+      <section className="home-live-section">
+        <iframe
+          className="home-live-video"
+          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
+          title="Live from ISS"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        />
+      </section>
+      <h2>Envoyez un message à l'équipage de l'ISS</h2>
+      <section className="home-contact-section">
+        <ContactForm />
       </section>
     </div>
   );
