@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "../../pages/Home/Home";
-import Map from "../../pages/Map";
+import Map from "../../pages/Map/Map";
 import Timeline from "../../pages/Timeline/Timeline";
-import Chronicle from "../../pages/Chronicle";
+import Chronicles from "../../pages/Chronicles/Chronicles";
 
 export default function Header() {
   return (
@@ -21,22 +21,22 @@ export default function Header() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/Map">Map</Link>
+                <Link to="/map">Map</Link>
               </li>
               <li>
-                <Link to="/Timeline">Timeline</Link>
+                <Link to="/timeline">Timeline</Link>
               </li>
               <li>
-                <Link to="/Chronicle">Chronicle</Link>
+                <Link to="/chronicles">Chronicles</Link>
               </li>
             </ul>
           </nav>
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Map" element={<Map />} />
-          <Route path="/Chronicle" element={<Chronicle />} />
-          <Route path="/Timeline" element={<Timeline />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/chronicles" element={<Chronicles />} />
+          <Route path="/timeline" element={<Timeline />} />
         </Routes>
       </div>
     </Router>
