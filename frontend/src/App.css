@@ -41,9 +41,13 @@ h3 {
 .logo {
   height: 100%;
 }
+nav {
+  height: 100%;
+}
 
 nav > ul {
   display: flex;
+  height: 100%;
   align-items: center;
 }
 
