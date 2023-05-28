@@ -41,9 +41,13 @@ h3 {
 .logo {
   height: 100%;
 }
+nav {
+  height: 100%;
+}
 
 nav > ul {
   display: flex;
+  height: 100%;
   align-items: center;
 }
 
@@ -102,6 +106,9 @@ footer {
   color: var(--links-color);
 }
 
+/* Tablet */
+
+/* Desktop */
 @media only screen and (max-width: 480px) {
   nav {
     width: 100%;

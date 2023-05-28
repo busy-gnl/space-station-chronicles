@@ -15,7 +15,6 @@ export default function Header() {
             src="../../public/images/logos/noun-international-space-station2-5408602.png"
             alt=""
           />
-
           <nav>
             <ul>
               <li>
