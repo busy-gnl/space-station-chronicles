@@ -10,13 +10,12 @@ export default function Header() {
     <Router>
       <div>
         <header>
-          <div>
-            <img
-              className="logo"
-              src="../../public/images/logos/noun-international-space-station2-5408602.png"
-              alt=""
-            />
-          </div>
+          <img
+            className="logo"
+            src="../../public/images/logos/noun-international-space-station2-5408602.png"
+            alt=""
+          />
+
           <nav>
             <ul>
               <li>
