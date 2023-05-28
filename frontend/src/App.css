@@ -31,7 +31,7 @@ h2,
 h3 {
   color: var(--font-color);
   text-align: center;
-  margin: 2rem 2rem;
+  margin: 2rem 0;
 }
 
 .logo {
@@ -87,4 +87,3 @@ footer {
 .footer-logos {
   width: 1.5rem;
 }
-
