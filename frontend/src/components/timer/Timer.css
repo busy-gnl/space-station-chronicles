@@ -1,22 +1,33 @@
 /* Timer.jsx */
 /* Mobile */
 
-.timer-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .timer-h3{
-    margin: 1rem;
-  }
-  
-  .timer-iss{
-    text-align: center;
-    color: var(--font-color);
-    font-size: 1.5rem;
-    margin: 1rem;
-  }
+.timer-div {
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.timer-h3 {
+  margin: 1rem;
+}
 
+.timer-iss {
+  text-align: center;
+  color: var(--font-color);
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+/* Tablet */
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+  .timer-div {
+    width: 40vw;
+  }
+}
