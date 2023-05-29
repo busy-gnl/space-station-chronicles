@@ -1,5 +1,42 @@
 /* Mobile */
+.fun-facts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--background-blur);
+  padding: 0.5rem;
+}
+
+.fun-fact {
+  width: 80%;
+  color: var(--font-color);
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.fun-fact-random-button {
+  width: 40%;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--links-color);
+  color: var(--background-color);
+  font-weight: bold;
+}
+
+.fun-fact-random-button:hover {
+  cursor: pointer;
+}
 
 /* Tablet */
+.fun-fact-random-button {
+  width: 30%;
+}
 
 /* Desktop */
+.fun-fact-random-button {
+  width: 20%;
+}

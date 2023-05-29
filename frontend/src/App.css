@@ -3,6 +3,7 @@
   --font-color: white;
   --links-color: white;
   --border-radius: 10px;
+  --background-blur: rgba(0, 0, 0, 0.4);
 }
 
 * {

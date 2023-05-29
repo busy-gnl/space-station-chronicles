@@ -119,7 +119,11 @@ export default function FunFacts() {
   return (
     <div className="fun-facts-container">
       <div className="fun-fact">{funFact}</div>
-      <button type="button" onClick={() => randomFunFact()}>
+      <button
+        className="fun-fact-random-button"
+        type="button"
+        onClick={() => randomFunFact()}
+      >
         Random Fun Fact
       </button>
     </div>
