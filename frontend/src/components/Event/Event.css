@@ -1,7 +1,7 @@
 /*Mobile*/
 
 :root {
-  --timeline-color: black;
+  --timeline-color: white;
 }
 
 #event-balise {
@@ -36,5 +36,27 @@ p {
 }
 
 .event-img {
+  width: 40vh;
+}
+
+.event-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*DeskTop*/
+
+@media only screen and (min-width: 480px) {
+  .event-div::before {
+    display: none;
+  }
+  #event-balise {
+    display: none;
+  }
+  .event-img {
     width: 40vh;
+    align-self: center;
+  }
 }
