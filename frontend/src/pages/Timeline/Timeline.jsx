@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Event from "../../components/layout/Event";
+import Event from "../../components/Event/Event";
 import "./Timeline.css";
 
 export default function Timeline() {
