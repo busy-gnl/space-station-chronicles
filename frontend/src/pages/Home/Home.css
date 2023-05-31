@@ -14,7 +14,7 @@
 }
 
 .home-intro-iss {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--background-blur);
   border-radius: var(--border-radius);
   padding: 0.5rem;
   width: 80vw;
