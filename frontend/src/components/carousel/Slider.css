@@ -1,0 +1,22 @@
+* {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  right: 2vw;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  left: 2vw;
+  font-size: 2rem;
+  color: #ffffff;
+}

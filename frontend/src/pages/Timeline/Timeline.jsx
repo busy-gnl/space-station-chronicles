@@ -1,9 +1,22 @@
-import Event from "../../components/layout/Event";
+import { useState } from "react";
+import Event from "../../components/Event/Event";
 import "./Timeline.css";
 
 export default function Timeline() {
+  const addEvent = (anEvent) => {
+    return (
+      <Event
+        date={anEvent.date}
+        title={anEvent.title}
+        description={anEvent.description}
+        picture={anEvent.picture}
+      />
+    );
+  };
+
   const event = [
     {
+      id: "event1",
       date: "1984",
       title: "Reagan ordonne à la NASA de construire l’ISS ",
       description:
@@ -12,6 +25,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/ronald-reagan-timeline-600.jpg",
     },
     {
+      id: "event2",
       date: "1998",
       title: "Lancement du premier segment de l'ISS",
       description:
@@ -20,6 +34,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/ISS-Zarya-STS-88-1998.jpg",
     },
     {
+      id: "event3",
       date: "1998",
       title: "Lancement des premiers composants fabriqués aux États-Unis",
       description:
@@ -28,6 +43,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/s99-unity.jpg",
     },
     {
+      id: "event4",
       date: "2000",
       title: "Première équipe a résidé dans la station",
       description:
@@ -36,6 +52,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/first-crew-iss-nov2000.jpg",
     },
     {
+      id: "event5",
       date: "2001",
       title: "Ajout d’un module de laboratoire aux États-Unis",
       description:
@@ -44,6 +61,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/sts_98_destiny-feb2001.jpg",
     },
     {
+      id: "event6",
       date: "2005",
       title:
         "Le module de laboratoire américain est reconnu comme le plus récent laboratoire national américain",
@@ -53,6 +71,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/destiny3.jpg",
     },
     {
+      id: "event7",
       date: "2008",
       title: "Un laboratoire européen rejoint l’ISS",
       description:
@@ -61,6 +80,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/columbus-lab-esa.jpg",
     },
     {
+      id: "event8",
       date: "2008",
       title: "Un laboratoire japonais rejoint l’ISS",
       description:
@@ -69,6 +89,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/external-kibo.jpg",
     },
     {
+      id: "event9",
       date: "2010",
       title: "Dixième anniversaire de l'ISS",
       description:
@@ -77,6 +98,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/iss_sts13010years.jpg",
     },
     {
+      id: "event10",
       date: "2011",
       title: "La NASA publie un accord de coopération",
       description:
@@ -85,6 +107,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2022/01/600NASA-logo.jpg",
     },
     {
+      id: "event11",
       date: "2011",
       title: "La NASA choisit le laboratoire national de l’ISS",
       description:
@@ -93,6 +116,7 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/2023/02/logo-blue.jpg",
     },
     {
+      id: "event12",
       date: "2013",
       title: "Le premier vol national de recherche en laboratoire de l’ISS",
       description:
@@ -101,24 +125,33 @@ export default function Timeline() {
         "https://www.issnationallab.org/wp-content/uploads/protein-crystalization-iss-launch-e1643234474626.jpg",
     },
   ];
+
+  const [anEvent, setAnEvent] = useState(event[0]);
+
   return (
     <>
       <h1>Chronologie</h1>
-      <div className="timeline-div">
+      <div className="timeline-div-mobile">
         <ul>
           {event.map((e) => {
-            return (
-              <li key={e.date}>
-                <Event
-                  date={e.date}
-                  title={e.title}
-                  description={e.description}
-                  picture={e.picture}
-                />
-              </li>
-            );
+            return <li key={e.id}>{addEvent(e)}</li>;
           })}
         </ul>
+      </div>
+      <div className="timeline-div-Desktop">
+        <img
+          className="timeline-img"
+          src="../../../public/images/iss-orbite.webp"
+          alt=""
+        />
+        <div className="timeline-button">
+          {event.map((e) => (
+            <button type="button" onClick={() => setAnEvent(e)}>
+              {e.date}
+            </button>
+          ))}
+        </div>
+        <div className="timeline-card">{addEvent(anEvent)}</div>
       </div>
     </>
   );
