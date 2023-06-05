@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { SlideImage, StyledSlider } from "./SlideImage";
-import "./Slider.css"
+import "./Slider.css";
 
 function Slider({ slides }) {
   const [current, setCurrent] = useState(0);

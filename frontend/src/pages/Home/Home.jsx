@@ -1,11 +1,10 @@
 /* eslint-disable import/no-unresolved */
+import Slider from "@components/carousel/Slider";
 import Timer from "../../components/Timer/Timer";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import "./Home.css";
-import Slider from "@components/carousel/Slider";
 
 export default function Home() {
-
   const ImageData = [
     {
       id: 1,
@@ -14,7 +13,8 @@ export default function Home() {
     },
     {
       id: 2,
-      image: "https://starwalk.space/gallery/images/iss-quiz-intro/1920x1080.jpg",
+      image:
+        "https://starwalk.space/gallery/images/iss-quiz-intro/1920x1080.jpg",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ export default function Home() {
         "https://images.lindependant.fr/api/v1/images/view/63f86bfb29c7275ee07a9f5d/large/image.jpg?v=1",
     },
   ];
-  
+
   return (
     <div>
       <Slider slides={ImageData} />
