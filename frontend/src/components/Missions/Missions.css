@@ -1,0 +1,23 @@
+/* Mobile */
+.missions-container {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--background-blur);
+  padding: 0.5rem;
+}
+
+.mission-info {
+  text-align: justify;
+}
+
+/* Tablet */
+@media only screen and (min-width: 769px) {
+}
+
+/* Desktop */
+@media only screen and (min-width: 1025px) {
+}
