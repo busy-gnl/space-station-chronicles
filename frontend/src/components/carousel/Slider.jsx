@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { SlideImage, StyledSlider } from "./SlideImage";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { SlideImage, StyledSlider } from "./SlideImage";
 
-const Slider = ({ slides }) => {
+function Slider({ slides }) {
   const [current, setCurrent] = useState(0);
-  const length = slides.length;
+  const { length } = slides;
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
@@ -17,12 +17,12 @@ const Slider = ({ slides }) => {
       <FaChevronRight className="rightArrow" onClick={nextSlide} />
       {slides.map((slide, index) => {
         return (
-          <div key={index}>
+          <div key={slide.id}>
             {index === current && <SlideImage src={slide.image} alt="" />}
           </div>
         );
       })}
     </StyledSlider>
   );
-};
+}
 export default Slider;

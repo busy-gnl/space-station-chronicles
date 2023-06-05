@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const SlideImage = styled.img`
   width: 100vw;
   height: 30vw;
