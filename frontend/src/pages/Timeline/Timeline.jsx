@@ -131,6 +131,7 @@ export default function Timeline() {
   return (
     <>
       <h1>Chronologie</h1>
+
       <div className="timeline-div-mobile">
         <ul>
           {event.map((e) => {
@@ -141,7 +142,7 @@ export default function Timeline() {
       <div className="timeline-div-Desktop">
         <img
           className="timeline-img"
-          src="../../../public/images/iss-orbite.webp"
+          src="../../../public/images/vehicle-on-the-moon.jpg"
           alt=""
         />
         <div className="timeline-button">

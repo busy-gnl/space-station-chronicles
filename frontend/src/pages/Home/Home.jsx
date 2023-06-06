@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import Slider from "@components/carousel/Slider";
 import Timer from "../../components/Timer/Timer";
-import ContactForm from "../../components/ContactForm/ContactForm";
+import ContactForm from "../../components/contact_form/ContactForm";
 import "./Home.css";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       <section className="home-about-iss">
         <img
           className="home-about-img"
-          src="../../../public/images/iss-bacteries.webp"
+          src="../../../images/iss-bacteries.webp"
           alt="'ISS"
         />
         <div className="home-intro-iss">
@@ -66,7 +66,7 @@ export default function Home() {
         <Timer />
         <img
           className="home-iss-orbit-img"
-          src="../../../public/images/iss-orbite.webp"
+          src="../../../images/iss-orbite.webp"
           alt="ISS en orbite"
         />
       </section>
