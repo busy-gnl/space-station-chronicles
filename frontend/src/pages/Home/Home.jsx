@@ -74,7 +74,7 @@ export default function Home() {
       <section className="home-live-section">
         <iframe
           className="home-live-video"
-          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/86YLFOog4GM?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
