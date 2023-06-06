@@ -7,11 +7,18 @@ export default function Chronicles() {
   return (
     <div>
       <h1>Space Station Chronicles</h1>
+
+      <img
+        className="chronicles-picture-iss"
+        src="../../../public/images/earth-from-above.jpg"
+        alt=""
+      />
+
       <h2>Les différentes missions de l'ISS</h2>
       <section className="chronicles-missions-section">
         <h3>
-          L'ISS remplit plusieurs missions essentielles dans le domaine de
-          l'exploration spatiale et de la recherche scientifique. <br />
+          L'ISS remplit plusieurs missions essentielles pour faire avancer
+          l'exploration spatiale et la recherche scientifique. <br />
           <br />
           Voici les principales missions de l'ISS :
         </h3>

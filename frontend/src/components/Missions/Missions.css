@@ -10,14 +10,60 @@
   padding: 0.5rem;
 }
 
+.missions-domain {
+  text-align: center;
+}
+
 .mission-info {
-  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.missions-button-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 80%;
+}
+
+.missions-change-button {
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--links-color);
+  color: var(--background-color);
+  font-weight: bold;
 }
 
 /* Tablet */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 682px) {
+  .missions-button-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /* Desktop */
+@media only screen and (min-width: 875px) {
+  /* .missions-button-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
+  .missions-change-button {
+    width: 25%;
+  }
+}
+
+/* Big Desktop */
 @media only screen and (min-width: 1025px) {
+  .missions-button-container {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
 }
