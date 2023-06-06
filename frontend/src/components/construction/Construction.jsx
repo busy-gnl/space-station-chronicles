@@ -1,5 +1,7 @@
 import React from "react";
 import "./Construction.css";
+import { Carousel } from "react-responsive-carousel"; // eslint-disable-line
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // eslint-disable-line
 
 export default function Construction() {
   const modules = [
@@ -28,7 +30,7 @@ export default function Construction() {
     {
       id: 3,
       name: "Destiny (Laboratoire américain)",
-      image: "../../../public/images/destiny.jpeg",
+      image: "../../../public/images/destiny.png",
       description:
         "Le module Destiny, le premier laboratoire américain de l'ISS, a été lancé le 7 février 2001. Il a été construit par les États-Unis et est utilisé pour effectuer des expériences scientifiques dans l'espace. Destiny est équipé de racks de recherche et de systèmes de communication avancés.",
     },
@@ -88,37 +90,32 @@ export default function Construction() {
       description:
         "Le module Nauka, également appelé Multipurpose Laboratory Module (MLM), est le dernier module russe de l'ISS. Il a été lancé le 21 juillet 2021. Nauka est un module de laboratoire polyvalent qui offre des capacités supplémentaires pour la recherche scientifique et des systèmes de support de vie améliorés.",
     },
+    {
+      id: 12,
+      name: "Internationnal Space Station",
+      image: "../../../public/images/iss-modules.jpeg",
+      description:
+        "Ces modules, construits par différents partenaires internationaux, ont été assemblés progressivement pour former la Station spatiale internationale telle que nous la connaissons aujourd'hui. Ils fournissent des installations pour la recherche scientifique, les sorties extravéhiculaires, le logement de l'équipage et les opérations de soutien nécessaires pour mener des missions dans l'espace.",
+    },
   ];
 
   return (
-    <div>
-      <h2>Construction</h2>
-      <img
-        className="construction-img"
-        src="../../../public/images/iss-modules.jpeg"
-        alt=""
-      />
-      <div className="construction-modules-container">
-        <ul>
-          {modules.map((module) => {
-            return (
-              <li key={module.id}>
-                <h3>{module.name}</h3>
-                <img src={module.image} alt="" />
-                <p>{module.description}</p>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="construction-modules-resume">
-          Ces modules, construits par différents partenaires internationaux, ont
-          été assemblés progressivement pour former la Station spatiale
-          internationale telle que nous la connaissons aujourd'hui. Ils
-          fournissent des installations pour la recherche scientifique, les
-          sorties extravéhiculaires, le logement de l'équipage et les opérations
-          de soutien nécessaires pour mener des missions dans l'espace.
+    <Carousel>
+      {modules.map((module) => (
+        <div key={module.id}>
+          <h3>{module.name}</h3>
+          <div className="construction-carousel-container">
+            <img
+              className="construction-module-image"
+              src={module.image}
+              alt="module ISS"
+            />
+            <div className="construction-module-description">
+              {module.description}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ))}
+    </Carousel>
   );
 }

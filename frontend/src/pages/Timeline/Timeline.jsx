@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Construction from "../../components/construction/Construction";
 import Event from "../../components/Event/Event";
 import "./Timeline.css";
 
@@ -130,30 +131,36 @@ export default function Timeline() {
 
   return (
     <>
-      <h1>Chronologie</h1>
-
-      <div className="timeline-div-mobile">
-        <ul>
-          {event.map((e) => {
-            return <li key={e.id}>{addEvent(e)}</li>;
-          })}
-        </ul>
-      </div>
-      <div className="timeline-div-Desktop">
-        <img
-          className="timeline-img"
-          src="../../../public/images/vehicle-on-the-moon.jpg"
-          alt=""
-        />
-        <div className="timeline-button">
-          {event.map((e) => (
-            <button type="button" onClick={() => setAnEvent(e)}>
-              {e.date}
-            </button>
-          ))}
+      <h1>Timeline</h1>
+      <section className="timeline-events-section">
+        <div className="timeline-div-mobile">
+          <ul>
+            {event.map((e) => {
+              return <li key={e.id}>{addEvent(e)}</li>;
+            })}
+          </ul>
         </div>
-        <div className="timeline-card">{addEvent(anEvent)}</div>
-      </div>
+        <h2>La conquête de l'espace</h2>
+        <div className="timeline-div-Desktop">
+          <img
+            className="timeline-img"
+            src="../../../public/images/vehicle-on-the-moon.jpg"
+            alt=""
+          />
+          <div className="timeline-button">
+            {event.map((e) => (
+              <button type="button" onClick={() => setAnEvent(e)}>
+                {e.date}
+              </button>
+            ))}
+          </div>
+          <div className="timeline-card">{addEvent(anEvent)}</div>
+        </div>
+      </section>
+      <h2>Constructions des modules de l'ISS</h2>
+      <section className="timeline-modules-section">
+        <Construction />
+      </section>
     </>
   );
 }
