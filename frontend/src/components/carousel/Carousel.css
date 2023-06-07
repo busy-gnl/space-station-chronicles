@@ -8,7 +8,7 @@
 .rightArrow {
   position: absolute;
   top: 50%;
-  right: 2vw;
+  right: 10px;
   font-size: 2rem;
   color: #ffffff;
 }
@@ -16,7 +16,7 @@
 .leftArrow {
   position: absolute;
   top: 50%;
-  left: 2vw;
+  left: 10px;
   font-size: 2rem;
   color: #ffffff;
 }
