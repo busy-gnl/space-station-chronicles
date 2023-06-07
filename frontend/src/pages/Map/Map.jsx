@@ -30,19 +30,20 @@ export default function Map() {
   return (
     <div className="map-container">
       <h1>Map</h1>
-      <h2>International Space Station Localiation</h2>
+      <h2>International Space Station Localisation</h2>
       <section className="map-live-section">
         <div className="map-panel-info">
           <p>Latitude : {coords.latitude}</p>
-          <p>Longitude : {coords.longitude}</p>
+          <p>Latitude : {coords.longitude}</p>
+          <p>Altitude : 410 km</p>
+          <p>Vitess : 28 000 km/h</p>
         </div>
         <MapContext.Provider value={{ coords }}>
           <ApiMap />
         </MapContext.Provider>
-
         <iframe
           className="map-live-video"
-          src="https://www.youtube.com/embed/86YLFOog4GM?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
