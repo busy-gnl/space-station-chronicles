@@ -14,7 +14,7 @@
 
 .App {
   background-color: var(--background-color);
-  background: url(../public/images/milky-way.jpg) center/cover repeat;
+  background: url(../images/milky-way.jpg) center/cover repeat;
   height: 100%;
   width: 100vw;
   overflow: hidden;

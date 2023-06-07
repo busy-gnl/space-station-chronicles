@@ -9,7 +9,7 @@ export default function Footer() {
           <a href="https://www.facebook.com/ISS/">
             <img
               className="footer-logos"
-              src="../../../public/images/logos/facebook.png"
+              src="../../../images/logos/facebook.png"
               alt="logo facebook"
             />
           </a>
@@ -18,7 +18,7 @@ export default function Footer() {
           <a href="https://www.instagram.com/iss/">
             <img
               className="footer-logos"
-              src="../../../public/images/logos/instagram.png"
+              src="../../../images/logos/instagram.png"
               alt="logo instagram"
             />
           </a>
@@ -27,7 +27,7 @@ export default function Footer() {
           <a href="https://twitter.com/Space_Station">
             <img
               className="footer-logos"
-              src="../../../public/images//logos/logo-twitter.png"
+              src="../../../images/logos/logo-twitter.png"
               alt="logo twitter"
             />
           </a>

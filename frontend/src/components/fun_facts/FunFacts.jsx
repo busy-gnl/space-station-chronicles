@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./FunFacts.css";
 
 export default function FunFacts() {
@@ -109,12 +109,23 @@ export default function FunFacts() {
     "Les astronautes se déplacent à travers la station en utilisant des poignées spéciales fixées aux murs et aux sols. En apesanteur, ils peuvent se pousser, se tirer ou se propulser pour se déplacer d'un endroit à un autre. Cela nécessite une coordination et une adaptation de leurs sens de l'équilibre et de la direction.",
   ];
 
-  const randomIndex = Math.floor(Math.random() * funFacts.length);
-  const [funFact, setFunFact] = useState(funFacts[randomIndex]);
+  // const [randomI, setRandomI] = useState(randomIndex);
+  // let randomIndex = Math.floor(Math.random() * funFacts.length);
+  const [counter, setCounter] = useState(0);
+  const [funFact, setFunFact] = useState(funFacts[counter]);
 
-  const randomFunFact = () => {
-    setFunFact(funFacts[randomIndex]);
-  };
+  function randomFunFact() {
+    if (counter < funFacts.length - 1) {
+      setCounter(counter + 1);
+    } else {
+      setCounter(0);
+    }
+
+    setFunFact(funFacts[counter]);
+    // console.info("funFacts[randomIndex] :>> ", counter);
+  }
+
+  useEffect(() => {}, [counter, funFact]);
 
   return (
     <div className="fun-facts-container">
