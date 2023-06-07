@@ -1,5 +1,5 @@
 import { GoogleMap, MarkerF, LoadScript } from "@react-google-maps/api";
-import useContext from "react";
+import { useContext } from "react";
 import MapContext from "../../contexts/MapContext";
 
 export default function ApiMap() {
@@ -14,13 +14,13 @@ export default function ApiMap() {
   ];
 
   return (
-    <div style={{ height: "800px", width: "800px" }}>
+    <div className="map-div">
       {window.google === undefined ? (
         <LoadScript googleMapsApiKey="AIzaSyD9zRA6EHLpoSgkAzsNyqluYh0mHDhA8fo">
           <GoogleMap
             center={{ lat: points[0].lat, lng: points[0].lng }}
             zoom={5}
-            mapContainerStyle={{ height: "800px", width: "800px" }}
+            mapContainerStyle={{ height: "800px", width: "100%" }}
           >
             <MarkerF
               position={{ lat: points[0].lat, lng: points[0].lng }}
@@ -32,7 +32,7 @@ export default function ApiMap() {
         <GoogleMap
           center={{ lat: points[0].lat, lng: points[0].lng }}
           zoom={5}
-          mapContainerStyle={{ height: "800px", width: "800px" }}
+          mapContainerStyle={{ height: "800px", width: "100%" }}
         >
           <MarkerF
             position={{ lat: points[0].lat, lng: points[0].lng }}
