@@ -1,7 +1,6 @@
 import React from "react";
+import Carousel from "../carousel/Carousel";
 import "./Construction.css";
-import { Carousel } from "react-responsive-carousel"; // eslint-disable-line
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // eslint-disable-line
 
 export default function Construction() {
   const modules = [
@@ -103,7 +102,6 @@ export default function Construction() {
     <Carousel>
       {modules.map((module) => (
         <div key={module.id}>
-          <h3>{module.name}</h3>
           <div className="construction-carousel-container">
             <img
               className="construction-module-image"
@@ -111,7 +109,8 @@ export default function Construction() {
               alt="module ISS"
             />
             <div className="construction-module-description">
-              {module.description}
+              <h3>{module.name}</h3>
+              <p>{module.description}</p>
             </div>
           </div>
         </div>

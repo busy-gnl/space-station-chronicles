@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Construction from "../../components/construction/Construction";
 import Event from "../../components/Event/Event";
 import "./Timeline.css";
+import Construction from "../../components/construction/Construction";
 
 export default function Timeline() {
   const addEvent = (anEvent) => {
@@ -132,6 +132,7 @@ export default function Timeline() {
   return (
     <>
       <h1>Timeline</h1>
+      <h2>La conquête de l'espace</h2>
       <section className="timeline-events-section">
         <div className="timeline-div-mobile">
           <ul>
@@ -140,7 +141,6 @@ export default function Timeline() {
             })}
           </ul>
         </div>
-        <h2>La conquête de l'espace</h2>
         <div className="timeline-div-Desktop">
           <img
             className="timeline-img"
@@ -157,7 +157,7 @@ export default function Timeline() {
           <div className="timeline-card">{addEvent(anEvent)}</div>
         </div>
       </section>
-      <h2>Constructions des modules de l'ISS</h2>
+      <h2>Construction des modules de l'ISS</h2>
       <section className="timeline-modules-section">
         <Construction />
       </section>

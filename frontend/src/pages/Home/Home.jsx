@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import Slider from "@components/carousel/Slider";
+import Slider from "@components/slider/Slider";
 import Timer from "../../components/Timer/Timer";
 import ContactForm from "../../components/contact_form/ContactForm";
 import "./Home.css";
