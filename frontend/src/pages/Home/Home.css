@@ -1,6 +1,6 @@
 /* Home.jsx */
 /* Mobile */
-.home-about-iss {
+.home-about-section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,11 +56,24 @@
 }
 
 /* Tablet */
+@media only screen and (min-width: 769px) {
+  .sc-gEvEer {
+    margin-top: 1rem;
+  }
+
+  .sc-aXZVg {
+    position: relative;
+    width: 90vw;
+    height: 40vh;
+  }
+}
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
-  .home-about-iss {
-    margin: 0 2rem;
+  .home-about-section {
+    width: 80%;
+    margin: auto;
+    background: var(--background-blur);
     flex-direction: row;
     justify-content: space-between;
   }
@@ -74,7 +87,9 @@
   }
 
   .home-timer-section {
-    margin: 0 2rem;
+    width: 80%;
+    margin: auto;
+    background: var(--background-blur);
     flex-direction: row;
     justify-content: space-between;
     align-items: start;

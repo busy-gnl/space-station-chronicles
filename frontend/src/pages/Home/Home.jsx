@@ -32,7 +32,7 @@ export default function Home() {
     <div>
       <Slider slides={ImageData} />
       <h2>International Space Station</h2>
-      <section className="home-about-iss">
+      <section className="home-about-section">
         <img
           className="home-about-img"
           src="../../../images/iss-bacteries.webp"
