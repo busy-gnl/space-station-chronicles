@@ -31,6 +31,8 @@
     "husky": "^8.0.3"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.18.1",
+    "google-maps-react-markers": "^1.2.3",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
