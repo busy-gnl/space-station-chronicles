@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import Slider from "@components/carousel/Slider";
+import Slider from "@components/slider/Slider";
 import Timer from "../../components/Timer/Timer";
 import ContactForm from "../../components/contact_form/ContactForm";
 import "./Home.css";
@@ -32,7 +32,7 @@ export default function Home() {
     <div>
       <Slider slides={ImageData} />
       <h2>International Space Station</h2>
-      <section className="home-about-iss">
+      <section className="home-about-section">
         <img
           className="home-about-img"
           src="../../../images/iss-bacteries.webp"
@@ -74,7 +74,7 @@ export default function Home() {
       <section className="home-live-section">
         <iframe
           className="home-live-video"
-          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/86YLFOog4GM?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen

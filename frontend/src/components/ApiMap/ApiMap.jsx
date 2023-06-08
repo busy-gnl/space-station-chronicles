@@ -1,4 +1,4 @@
-import { GoogleMap, MarkerF, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, MarkerF, LoadScript } from "@react-google-maps/api"; // eslint-disable-line
 import { useContext } from "react";
 import MapContext from "../../contexts/MapContext";
 

@@ -1,5 +1,32 @@
 /*Mobile*/
-@media only screen and (min-width: 480px) {
+.timeline-div-Desktop {
+  display: none;
+}
+
+.timeline-events-section {
+  margin: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--background-blur);
+  padding: 0.5rem;
+}
+
+.timeline-modules-section {
+  margin: auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--background-blur);
+}
+
+/*Tablet*/
+
+@media only screen and (min-width: 768px) {
   .timeline-div-mobile {
     display: none;
   }
@@ -8,13 +35,9 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .timeline-div-Desktop {
-    display: none;
-  }
-}
-
 /*DeskTop*/
+@media only screen and (min-width: 1025px) {
+}
 .timeline-div-Desktop {
   align-items: center;
   flex-direction: column;
