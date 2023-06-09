@@ -3,3 +3,36 @@
 /* Tablet */
 
 /* Desktop */
+.titre {
+    padding: 5px;
+    text-align: center;
+  }
+  .crew-image {
+    width: 120px;
+    height: 165px;
+  }
+  
+  .crew-modal {
+    padding: 15px;
+    color: black;
+  }
+  
+  .crew-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 15px;
+    padding: 10px;
+    width: 100;
+  }
+  
+  .timeline-card {
+    border: solid;
+    border-radius: 25px;
+    background: white;
+    margin: 15px;
+    padding: 25px;
+    width: 100;
+  }
