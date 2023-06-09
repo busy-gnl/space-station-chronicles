@@ -2,10 +2,11 @@
 import ApiMap from "@components/ApiMap/ApiMap";
 import { useState, useMemo } from "react";
 import MapContext from "../../contexts/MapContext";
+import Card from "../../components/crew/Card";
 import "./Map.css";
 
 export default function Map() {
-  const [coords, setCorrds] = useState({
+  const [coords, setCoords] = useState({
     latitude: 11,
     longitude: 14,
   });
@@ -14,7 +15,7 @@ export default function Map() {
     fetch("http://api.open-notify.org/iss-now.json")
       .then((response) => response.json())
       .then((data) => {
-        setCorrds({
+        setCoords({
           latitude: Number(data.iss_position.latitude),
           longitude: Number(data.iss_position.longitude),
         });
@@ -43,11 +44,15 @@ export default function Map() {
         </MapContext.Provider>
         <iframe
           className="map-live-video"
-          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/86YLFOog4GM?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
+      </section>
+      <h2>Equipage à bord de l'ISS</h2>
+      <section className="map-crew-section">
+        <Card />
       </section>
     </div>
   );

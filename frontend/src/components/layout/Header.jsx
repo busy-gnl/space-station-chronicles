@@ -18,16 +18,24 @@ export default function Header() {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link className="navlink" to="/">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link to="/map">Map</Link>
+                <Link className="navlink" to="/map">
+                  Map
+                </Link>
               </li>
               <li>
-                <Link to="/timeline">Timeline</Link>
+                <Link className="navlink" to="/timeline">
+                  Timeline
+                </Link>
               </li>
               <li>
-                <Link to="/chronicles">Chronicles</Link>
+                <Link className="navlink" to="/chronicles">
+                  Chronicles
+                </Link>
               </li>
             </ul>
           </nav>
