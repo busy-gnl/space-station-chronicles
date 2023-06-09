@@ -16,7 +16,7 @@ export default function ApiMap() {
   return (
     <div className="map-div">
       {window.google === undefined ? (
-        <LoadScript googleMapsApiKey="AIzaSyD9zRA6EHLpoSgkAzsNyqluYh0mHDhA8fo">
+        <LoadScript googleMapsApiKey="AIzaSyD6Od6BBAgaMS_RCuAEH6yPbeg9niUDHrA">
           <GoogleMap
             center={{ lat: points[0].lat, lng: points[0].lng }}
             zoom={5}

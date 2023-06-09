@@ -105,18 +105,15 @@ export default function Card() {
   const [anEvent, setAnEvent] = useState(event[0]);
 
   return (
-    <>
-      <h1 className="titre">Equipage à bord de l'ISS</h1>
-      <div className="crew-modal">
-        <div className="crew-button">
-          {event.map((e) => (
-            <button type="button" onClick={() => setAnEvent(e)}>
-              <img className="crew-image" src={e.picture} alt="" />
-            </button>
-          ))}
-        </div>
-        <div className="timeline-card">{addEvent(anEvent)}</div>
+    <div className="crew-modal">
+      <div className="crew-button">
+        {event.map((e) => (
+          <button type="button" onClick={() => setAnEvent(e)}>
+            <img className="crew-image" src={e.picture} alt="" />
+          </button>
+        ))}
       </div>
-    </>
+      <div className="crew-card">{addEvent(anEvent)}</div>
+    </div>
   );
 }

@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  border-radius: var(--border-radius);
 }
 
 .home-about-img {
@@ -24,6 +25,7 @@
 }
 
 .home-timer-section {
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,17 +58,6 @@
 }
 
 /* Tablet */
-@media only screen and (min-width: 769px) {
-  .sc-gEvEer {
-    margin-top: 1rem;
-  }
-
-  .sc-aXZVg {
-    position: relative;
-    width: 90vw;
-    height: 40vh;
-  }
-}
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {

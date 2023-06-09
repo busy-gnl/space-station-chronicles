@@ -50,9 +50,10 @@ export default function Map() {
           allowfullscreen
         ></iframe>
       </section>
-      <section>
+      <h2>Equipage à bord de l'ISS</h2>
+      <section className="map-crew-section">
         <Card />
-        </section>
+      </section>
     </div>
   );
 }

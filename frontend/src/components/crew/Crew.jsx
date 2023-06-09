@@ -4,7 +4,6 @@ import "./Crew.css";
 export default function Crew({ picture, age, nation, name, description }) {
   return (
     <div className="crew-div">
-      <img src="" alt="" />
       <div className="card-left">
         <img src={picture} alt="" />
         <h3>{age}</h3>
