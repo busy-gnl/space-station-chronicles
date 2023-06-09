@@ -5,7 +5,7 @@ import MapContext from "../../contexts/MapContext";
 import "./Map.css";
 
 export default function Map() {
-  const [coords, setCorrds] = useState({
+  const [coords, setCoords] = useState({
     latitude: 11,
     longitude: 14,
   });
@@ -14,7 +14,7 @@ export default function Map() {
     fetch("http://api.open-notify.org/iss-now.json")
       .then((response) => response.json())
       .then((data) => {
-        setCorrds({
+        setCoords({
           latitude: Number(data.iss_position.latitude),
           longitude: Number(data.iss_position.longitude),
         });
@@ -43,7 +43,7 @@ export default function Map() {
         </MapContext.Provider>
         <iframe
           className="map-live-video"
-          src="https://www.youtube.com/embed/itdpuGHAcpg?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/86YLFOog4GM?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
