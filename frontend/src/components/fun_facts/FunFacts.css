@@ -32,11 +32,15 @@
 }
 
 /* Tablet */
-.fun-fact-random-button {
-  width: 30%;
+@media only screen and (min-width: 769px) {
+  .fun-fact-random-button {
+    width: 30%;
+  }
 }
 
 /* Desktop */
-.fun-fact-random-button {
-  width: 20%;
+@media only screen and (min-width: 1025px) {
+  .fun-fact-random-button {
+    width: 20%;
+  }
 }

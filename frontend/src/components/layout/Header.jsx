@@ -12,7 +12,7 @@ export default function Header() {
         <header>
           <img
             className="logo"
-            src="../../public/images/logos/noun-international-space-station2-5408602.png"
+            src="../../images/logos/noun-international-space-station2-5408602.png"
             alt=""
           />
           <nav>
