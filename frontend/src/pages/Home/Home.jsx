@@ -1,7 +1,8 @@
 /* eslint-disable import/no-unresolved */
-import Slider from "@components/slider/Slider";
+import Slider from "../../components/slider/Slider";
 import Timer from "../../components/Timer/Timer";
-import ContactForm from "../../components/contact_form/ContactForm";
+// import ContactForm from "../../components/contact_form/ContactForm";
+import Chat from "../../components/chat/Chat";
 import "./Home.css";
 
 export default function Home() {
@@ -80,9 +81,10 @@ export default function Home() {
           allowfullscreen
         />
       </section>
-      <h2>Envoyez un message à l'équipage de l'ISS</h2>
+      <h2>Envoyez un message à l'équipage</h2>
       <section className="home-contact-section">
-        <ContactForm />
+        {/* <ContactForm /> */}
+        <Chat />
       </section>
     </div>
   );
