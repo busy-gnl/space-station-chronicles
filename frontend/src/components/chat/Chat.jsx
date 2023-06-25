@@ -32,7 +32,7 @@ export default function Chat() {
         throw (
           (data.error ||
             new Error(`Request failed with status ${response.status}`),
-          console.log(response))
+          console.info(response))
         );
       }
 
