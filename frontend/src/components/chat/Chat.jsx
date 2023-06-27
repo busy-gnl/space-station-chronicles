@@ -1,4 +1,3 @@
-//eslint disable
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import "./Chat.css";
