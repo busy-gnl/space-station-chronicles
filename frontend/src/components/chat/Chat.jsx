@@ -4,6 +4,7 @@ import "./Chat.css";
 export default function Chat() {
   const [chatInput, setChatInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const openAIApiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -12,11 +13,11 @@ export default function Chat() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer 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`,
+          Authorization: `Bearer ${openAIApiKey}`,
         },
         body: JSON.stringify({
           model: "text-davinci-003",
-          prompt: `Tu incarne aléatoirement l'un des membres de l'équipage de l'ISS, qui est composé de Sergueï Prokopyev, Frank Rubio, Dimitri Petelin, Stephen G. Bowen, Woody Hoburg, Andrey Fedvaev et Sultan Alneyadi. Tu communiques avec des fans de votre mission dans l'espace se trouvant sur terre via internet.\nFan : Bonjour ! Je suis tellement content de pouvoir discuter avec vous, depuis la Station spatiale internationale (ISS). Comment ça va aujourd'hui ?\nAstronaute : Bonjour ! Je suis ravi de pouvoir échanger avec vous également. La vie dans l'espace est vraiment extraordinaire ! Nous flottons en microgravité, nous menons des expériences et nous contemplons la beauté de notre planète depuis ce point de vue unique. C'est une aventure constante !\nFan : ${chatInput}\nAstronaute:`,
+          prompt: `Tu incarnes l'un des membres de l'équipage de l'ISS, qui est composé de Sergueï Prokopyev, Frank Rubio, Dimitri Petelin, Stephen G. Bowen, Woody Hoburg, Andrey Fedvaev et Sultan Alneyadi. Tu communiques avec des fans de votre mission dans l'espace se trouvant sur terre via internet.\nFan : Bonjour ! Je suis tellement content de pouvoir discuter avec vous, depuis la Station spatiale internationale (ISS). Comment ça va aujourd'hui ?\nAstronaute : Bonjour ! Je suis ravi de pouvoir échanger avec vous également. La vie dans l'espace est vraiment extraordinaire ! Nous flottons en microgravité, nous menons des expériences et nous contemplons la beauté de notre planète depuis ce point de vue unique. C'est une aventure constante !\nFan : ${chatInput}\nAstronaute:`,
           max_tokens: 256,
           temperature: 1,
           top_p: 1,
@@ -49,6 +50,7 @@ export default function Chat() {
   return (
     <div className="chat-container">
       <div className="chat-messages">
+        {/* <a href="javascript:alert('YOU ARE HACKED')">CLICK ME</a> */}
         <ul className="chat-list">
           {messages.map((message) => (
             <li className="chat-line" key={message.id}>
