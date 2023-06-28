@@ -12,11 +12,12 @@ export default function ApiMap() {
       lng: coords.longitude,
     },
   ];
+  const googleMapsApiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
   return (
     <div className="map-div">
       {window.google === undefined ? (
-        <LoadScript googleMapsApiKey="AIzaSyD6Od6BBAgaMS_RCuAEH6yPbeg9niUDHrA">
+        <LoadScript googleMapsApiKey={googleMapsApiKey}>
           <GoogleMap
             center={{ lat: points[0].lat, lng: points[0].lng }}
             zoom={5}
