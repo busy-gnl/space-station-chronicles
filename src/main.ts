@@ -10,7 +10,7 @@ async function bootstrap() {
   const appService = app.get(AppService);
 
   try {
-    await appService.fillDatabaseWithData();
+    await appService.initDatabase();
     console.log(
       'Le remplissage de la base de données a été effectué avec succès.',
     );

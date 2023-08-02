@@ -1,14 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import { InjectConnection } from '@nestjs/typeorm';
-import { Connection } from 'typeorm';
+import { DataSource } from 'typeorm';
 import * as fs from 'fs';
 
 @Injectable()
 export class DatabaseService {
-  constructor(@InjectConnection() private readonly connection: Connection) {}
+  constructor(private readonly datasource: DataSource) {}
 
   async runSqlScript(scriptPath: string): Promise<void> {
     const sql = fs.readFileSync(scriptPath).toString();
-    await this.connection.query(sql);
+    await this.datasource.query(sql);
+  }
+
+  async initializeDatabase(): Promise<void> {
+    await this.datasource.initialize();
+  }
+
+  dropDatabase(): Promise<void> {
+    return this.datasource.dropDatabase();
+  }
+
+  synchronizeDatabase(): Promise<void> {
+    return this.datasource.synchronize();
+  }
+
+  async fillDatabaseWithData(): Promise<void> {
+    const scriptPath = './database.sql';
+    await this.runSqlScript(scriptPath);
+  }
+
+  async closeDatabase(): Promise<void> {
+    await this.datasource.destroy();
   }
 }

@@ -17,6 +17,13 @@ import { MissionsModule } from './missions/missions.module';
 import { ConfigModule } from '@nestjs/config';
 import { databaseConfig } from './config/database.config';
 import { DatabaseService } from './database.service';
+import { Cart } from './carts/entities/cart.entity';
+import { Purchase } from './purchases/entities/purchase.entity';
+import { CartLine } from './carts/entities/cartLine.entity';
+import { PurchaseLine } from './purchases/entities/purchaseLine.entity';
+import { Mission } from './missions/entities/mission.entity';
+import { IssModule } from './iss-modules/entities/issModule.entity';
+import { Crew } from './crew/entities/crew.entity';
 
 config();
 
@@ -29,8 +36,20 @@ config();
       username: process.env.DATABASE_USERNAME,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_DB,
-      entities: [User, Product],
-      synchronize: false,
+      entities: [
+        User,
+        Product,
+        Cart,
+        Purchase,
+        CartLine,
+        PurchaseLine,
+        Event,
+        Mission,
+        IssModule,
+        Crew,
+        __dirname + '/../**/*.entity{.ts,.js}',
+      ],
+      synchronize: true,
       autoLoadEntities: true,
     }),
     TypeOrmModule.forRootAsync({

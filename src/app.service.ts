@@ -5,9 +5,12 @@ import { DatabaseService } from './database.service';
 export class AppService {
   constructor(private readonly databaseService: DatabaseService) {}
 
-  async fillDatabaseWithData(): Promise<void> {
-    const scriptPath = './database.sql';
-    await this.databaseService.runSqlScript(scriptPath);
+  async initDatabase(): Promise<void> {
+    await this.databaseService.initializeDatabase();
+    await this.databaseService.dropDatabase();
+    await this.databaseService.synchronizeDatabase();
+    await this.databaseService.fillDatabaseWithData();
+    await this.databaseService.closeDatabase();
   }
 
   getHello(): string {

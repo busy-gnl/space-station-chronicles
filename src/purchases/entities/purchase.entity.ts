@@ -1,5 +1,5 @@
-import { PurchaseLine } from 'src/purchases/entities/purchaseLine.entity';
-import { User } from 'src/users/entities/user.entity';
+import { PurchaseLine } from './purchaseLine.entity';
+import { User } from '../../users/entities/user.entity';
 import {
   Entity,
   Column,
@@ -13,16 +13,20 @@ export class Purchase {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'int' })
-  userId: number;
-
   @Column({ type: 'varchar' })
   status: string;
 
   @Column({ type: 'date' })
   date: string;
 
-  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.purchaseId)
+  @Column({ type: 'float' })
+  total: number;
+
+  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.purchase, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+  })
   purchaseLines: PurchaseLine[];
 
   @ManyToOne(() => User)

@@ -1,10 +1,9 @@
-import { Cart } from 'src/carts/entities/cart.entity';
-import { Purchase } from 'src/purchases/entities/purchase.entity';
+import { Cart } from '../../carts/entities/cart.entity';
+import { Purchase } from '../../purchases/entities/purchase.entity';
 import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToMany,
   OneToOne,
   ManyToOne,
 } from 'typeorm';
@@ -35,9 +34,19 @@ export class User {
   @Column({ type: 'varchar', default: 'user' })
   role: string;
 
-  @OneToOne(() => Cart)
+  @OneToOne(() => Cart, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
   cart: Cart;
 
-  @ManyToOne(() => Purchase, (purchase) => purchase.id)
+  @ManyToOne(() => Purchase, (purchase) => purchase.id, {
+    nullable: true,
+  })
   purchases: Purchase[];
+
+  @Column({ type: 'boolean', default: true })
+  isActive: boolean;
 }

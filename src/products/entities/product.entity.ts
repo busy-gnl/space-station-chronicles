@@ -1,5 +1,5 @@
-import { CartLine } from 'src/carts/entities/cartLine.entity';
-import { PurchaseLine } from 'src/purchases/entities/purchaseLine.entity';
+import { CartLine } from '../../carts/entities/cartLine.entity';
+import { PurchaseLine } from '../../purchases/entities/purchaseLine.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
@@ -25,9 +25,9 @@ export class Product {
   @Column({ type: 'varchar' })
   category: string;
 
-  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.productId)
+  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.product)
   purchaseLines: PurchaseLine[];
 
-  @OneToMany(() => CartLine, (cartLines) => cartLines.productId)
+  @OneToMany(() => CartLine, (cartLines) => cartLines.product)
   cartLines: CartLine[];
 }

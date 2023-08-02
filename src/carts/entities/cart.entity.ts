@@ -1,5 +1,5 @@
-import { CartLine } from 'src/carts/entities/cartLine.entity';
-import { User } from 'src/users/entities/user.entity';
+import { CartLine } from './cartLine.entity';
+import { User } from '../../users/entities/user.entity';
 import {
   Entity,
   Column,
@@ -13,12 +13,17 @@ export class Cart {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'int' })
-  userId: number;
-
-  @OneToMany(() => CartLine, (cartLine) => cartLine.cartId)
+  @OneToMany(() => CartLine, (cartLine) => cartLine.cart, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+  })
   cartLines: CartLine[];
 
-  @OneToOne(() => User)
+  @OneToOne(() => User, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+  })
   user: User;
 }
