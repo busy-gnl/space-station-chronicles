@@ -25,9 +25,19 @@ export class Product {
   @Column({ type: 'varchar' })
   category: string;
 
-  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.product)
+  @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.product, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
   purchaseLines: PurchaseLine[];
 
-  @OneToMany(() => CartLine, (cartLines) => cartLines.product)
+  @OneToMany(() => CartLine, (cartLines) => cartLines.product, {
+    cascade: true,
+    eager: true,
+    onDelete: 'CASCADE',
+    nullable: true,
+  })
   cartLines: CartLine[];
 }

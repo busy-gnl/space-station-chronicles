@@ -16,7 +16,7 @@ export class Purchase {
   @Column({ type: 'varchar' })
   status: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', default: () => 'CURRENT_TIMESTAMP()' })
   date: string;
 
   @Column({ type: 'float' })

@@ -19,13 +19,13 @@ export class User {
   @Column({ type: 'varchar', nullable: true })
   lastName: string;
 
-  @Column({ type: 'varchar', nullable: true, unique: true })
+  @Column({ type: 'varchar', unique: true })
   email: string;
 
   @Column({ type: 'varchar', nullable: true })
   address: string;
 
-  @Column({ type: 'varchar', unique: true })
+  @Column({ type: 'varchar' })
   hashedPassword: string;
 
   @Column({ type: 'varchar', nullable: true })

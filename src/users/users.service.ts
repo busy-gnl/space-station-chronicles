@@ -12,22 +12,27 @@ export class UsersService {
     private usersRepository: Repository<User>,
   ) {}
 
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+  async findAll(): Promise<User[]> {
+    return await this.usersRepository.find();
   }
 
-  findAll(): Promise<User[]> {
-    return this.usersRepository.find();
+  async findOneById(id: number): Promise<User | null> {
+    return await this.usersRepository.findOneBy({ id });
   }
 
-  findOne(id: number): Promise<User | null> {
-    return this.usersRepository.findOneBy({ id });
+  async findOneByEmail(email: string): Promise<User | null> {
+    return await this.usersRepository.findOneBy({ email });
+  }
+
+  async create(createUserDto: CreateUserDto): Promise<User> {
+    return await this.usersRepository.save(createUserDto);
+  }
+
+  async update(id: number, updateUserDto: UpdateUserDto): Promise<User> {
+    return await this.usersRepository.save({ id, ...updateUserDto });
   }
 
   async remove(id: number): Promise<void> {
     await this.usersRepository.delete(id);
-  }
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
   }
 }
