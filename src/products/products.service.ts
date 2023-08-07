@@ -12,23 +12,23 @@ export class ProductsService {
     private productsRepository: Repository<Product>,
   ) {}
 
-  create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+  async findAll(): Promise<Product[]> {
+    return await this.productsRepository.find();
   }
 
-  findAll(): Promise<Product[]> {
-    return this.productsRepository.find();
-  }
-
-  findOne(id: number): Promise<Product | null> {
+  findOneById(id: number): Promise<Product | null> {
     return this.productsRepository.findOneBy({ id });
+  }
+
+  async create(createProductDto: CreateProductDto) {
+    return await this.productsRepository.save(createProductDto);
+  }
+
+  async update(id: number, updateProductDto: UpdateProductDto) {
+    return await this.productsRepository.save({ id, ...updateProductDto });
   }
 
   async remove(id: number): Promise<void> {
     await this.productsRepository.delete(id);
-  }
-
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
   }
 }
