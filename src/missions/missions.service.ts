@@ -1,26 +1,34 @@
 import { Injectable } from '@nestjs/common';
-import { CreateMissionDto } from './dto/create-mission.dto';
-import { UpdateMissionDto } from './dto/update-mission.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Mission } from './entities/mission.entity';
+// import { CreateMissionDto } from './dto/create-mission.dto';
+// import { UpdateMissionDto } from './dto/update-mission.dto';
 
 @Injectable()
 export class MissionsService {
-  create(createMissionDto: CreateMissionDto) {
-    return 'This action adds a new mission';
+  constructor(
+    @InjectRepository(Mission)
+    private missionRepository: Repository<Mission>,
+  ) {}
+
+  async findAll(): Promise<Mission[]> {
+    return await this.missionRepository.find();
   }
 
-  findAll() {
-    return `This action returns all missions`;
+  async findOneById(id: number): Promise<Mission | null> {
+    return await this.missionRepository.findOneBy({ id });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} mission`;
-  }
+  // create(createMissionDto: CreateMissionDto) {
+  //   return 'This action adds a new mission';
+  // }
 
-  update(id: number, updateMissionDto: UpdateMissionDto) {
-    return `This action updates a #${id} mission`;
-  }
+  // update(id: number, updateMissionDto: UpdateMissionDto) {
+  //   return `This action updates a #${id} mission`;
+  // }
 
-  remove(id: number) {
-    return `This action removes a #${id} mission`;
-  }
+  // remove(id: number) {
+  //   return `This action removes a #${id} mission`;
+  // }
 }

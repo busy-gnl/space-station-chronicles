@@ -1,26 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { CreateCrewDto } from './dto/create-crew.dto';
-import { UpdateCrewDto } from './dto/update-crew.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Crew } from './entities/crew.entity';
+// import { CreateCrewDto } from './dto/create-crew.dto';
+// import { UpdateCrewDto } from './dto/update-crew.dto';
 
 @Injectable()
 export class CrewService {
-  create(createCrewDto: CreateCrewDto) {
-    return 'This action adds a new crew';
+  constructor(
+    @InjectRepository(Crew)
+    private crewRepository: Repository<Crew>,
+  ) {}
+
+  async findAll(): Promise<Crew[]> {
+    return await this.crewRepository.find();
   }
 
-  findAll() {
-    return `This action returns all crew`;
+  async findOneById(id: number): Promise<Crew | null> {
+    return await this.crewRepository.findOneBy({ id });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} crew`;
-  }
+  // create(createCrewDto: CreateCrewDto) {
+  //   return 'This action adds a new crew';
+  // }
+  // update(id: number, updateCrewDto: UpdateCrewDto) {
+  //   return `This action updates a #${id} crew`;
+  // }
 
-  update(id: number, updateCrewDto: UpdateCrewDto) {
-    return `This action updates a #${id} crew`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} crew`;
-  }
+  // remove(id: number) {
+  //   return `This action removes a #${id} crew`;
+  // }
 }

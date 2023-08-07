@@ -1,16 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  // Body,
+  // Post,
+  // Put,
+  // Delete,
+} from '@nestjs/common';
 import { CrewService } from './crew.service';
-import { CreateCrewDto } from './dto/create-crew.dto';
-import { UpdateCrewDto } from './dto/update-crew.dto';
+// import { CreateCrewDto } from './dto/create-crew.dto';
+// import { UpdateCrewDto } from './dto/update-crew.dto';
 
 @Controller('crew')
 export class CrewController {
   constructor(private readonly crewService: CrewService) {}
-
-  @Post()
-  create(@Body() createCrewDto: CreateCrewDto) {
-    return this.crewService.create(createCrewDto);
-  }
 
   @Get()
   findAll() {
@@ -19,16 +22,21 @@ export class CrewController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.crewService.findOne(+id);
+    return this.crewService.findOneById(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCrewDto: UpdateCrewDto) {
-    return this.crewService.update(+id, updateCrewDto);
-  }
+  // @Post()
+  // create(@Body() createCrewDto: CreateCrewDto) {
+  //   return this.crewService.create(createCrewDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.crewService.remove(+id);
-  }
+  // @Put(':id')
+  // update(@Param('id') id: string, @Body() updateCrewDto: UpdateCrewDto) {
+  //   return this.crewService.update(+id, updateCrewDto);
+  // }
+
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.crewService.remove(+id);
+  // }
 }
