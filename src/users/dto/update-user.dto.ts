@@ -6,8 +6,6 @@ import {
   MinLength,
   MaxLength,
   IsOptionnal,
-  isBoolean,
-  IsEnum,
 } from 'class-validator';
 
 import { PartialType } from '@nestjs/mapped-types';
