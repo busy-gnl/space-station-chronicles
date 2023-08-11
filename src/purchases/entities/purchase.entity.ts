@@ -1,4 +1,4 @@
-import { PurchaseLine } from './purchaseLine.entity';
+import { PurchaseLine } from '../../purchase-line/entities/purchaseLine.entity';
 import { User } from '../../users/entities/user.entity';
 import {
   Entity,
@@ -24,8 +24,8 @@ export class Purchase {
 
   @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.purchase, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
+    nullable: true,
   })
   purchaseLines: PurchaseLine[];
 

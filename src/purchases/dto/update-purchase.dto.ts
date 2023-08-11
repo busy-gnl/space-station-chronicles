@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreatePurchaseDto } from './create-purchase.dto';
-import { PurchaseLine } from '../entities/purchaseLine.entity';
+import { PurchaseLine } from '../../purchase-line/entities/purchaseLine.entity';
 
 export class UpdatePurchaseDto extends PartialType(CreatePurchaseDto) {
   status: string;

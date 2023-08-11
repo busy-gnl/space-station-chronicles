@@ -1,5 +1,5 @@
-import { CartLine } from '../../carts/entities/cartLine.entity';
-import { PurchaseLine } from '../../purchases/entities/purchaseLine.entity';
+import { CartLine } from '../../cart-line/entities/cartLine.entity';
+import { PurchaseLine } from '../../purchase-line/entities/purchaseLine.entity';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
@@ -27,7 +27,6 @@ export class Product {
 
   @OneToMany(() => PurchaseLine, (purchaseLine) => purchaseLine.product, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
     nullable: true,
   })
@@ -35,7 +34,6 @@ export class Product {
 
   @OneToMany(() => CartLine, (cartLines) => cartLines.product, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
     nullable: true,
   })

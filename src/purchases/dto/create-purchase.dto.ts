@@ -1,5 +1,5 @@
 import { User } from '../../users/entities/user.entity';
-import { PurchaseLine } from '../entities/purchaseLine.entity';
+import { PurchaseLine } from '../../purchase-line/entities/purchaseLine.entity';
 
 export class CreatePurchaseDto {
   id: number;

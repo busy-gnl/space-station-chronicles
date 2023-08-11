@@ -3,14 +3,14 @@ import {
   IsNotEmpty,
   MinLength,
   MaxLength,
-  IsOptionnal,
+  IsOptional,
   IsDefined,
   IsEnum,
   IsNumber,
   IsInt,
 } from 'class-validator';
-import { CartLine } from '../../carts/entities/cartLine.entity';
-import { PurchaseLine } from '../../purchases/entities/purchaseLine.entity';
+import { CartLine } from '../../cart-line/entities/cartLine.entity';
+import { PurchaseLine } from '../../purchase-line/entities/purchaseLine.entity';
 
 export class CreateProductDto {
   id: number;
@@ -23,7 +23,7 @@ export class CreateProductDto {
   name: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MinLength(20)
   description: string;
 

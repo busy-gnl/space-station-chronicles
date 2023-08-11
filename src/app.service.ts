@@ -6,11 +6,13 @@ export class AppService {
   constructor(private readonly databaseService: DatabaseService) {}
 
   async initDatabase(): Promise<void> {
-    await this.databaseService.initializeDatabase();
-    await this.databaseService.dropDatabase();
-    await this.databaseService.synchronizeDatabase();
-    await this.databaseService.fillDatabaseWithData();
-    await this.databaseService.closeDatabase();
+    // await this.databaseService.dropDatabase();
+    // await this.databaseService.initializeDatabase();
+    // await this.databaseService.showMigrations();
+    // await this.databaseService.runMigrations();
+    // await this.databaseService.synchronizeDatabase();
+    // await this.databaseService.fillDatabaseWithData();
+    // await this.databaseService.closeDatabase();
   }
 
   getHello(): string {

@@ -1,4 +1,3 @@
-import { UpdatePurchaseLineDto } from './dto/update-purchaseLine.dto';
 import {
   Controller,
   Get,
@@ -11,21 +10,14 @@ import {
 import { PurchasesService } from './purchases.service';
 import { CreatePurchaseDto } from './dto/create-purchase.dto';
 import { UpdatePurchaseDto } from './dto/update-purchase.dto';
-import { CreatePurchaseLineDto } from './dto/create-purchaseLine.dto';
 
 @Controller('purchases')
 export class PurchasesController {
   constructor(private readonly purchasesService: PurchasesService) {}
 
   @Post()
-  create(
-    @Body() createPurchaseDto: CreatePurchaseDto,
-    createPurchaseLineDto: CreatePurchaseLineDto,
-  ) {
-    return this.purchasesService.create(
-      createPurchaseDto,
-      createPurchaseLineDto,
-    );
+  create(@Body() createPurchaseDto: CreatePurchaseDto) {
+    return this.purchasesService.create(createPurchaseDto);
   }
 
   @Get()
@@ -42,13 +34,8 @@ export class PurchasesController {
   update(
     @Param('id') id: string,
     @Body() updatePurchaseDto: UpdatePurchaseDto,
-    updatePurchaseLineDto: UpdatePurchaseLineDto,
   ) {
-    return this.purchasesService.update(
-      +id,
-      updatePurchaseDto,
-      updatePurchaseLineDto,
-    );
+    return this.purchasesService.update(+id, updatePurchaseDto);
   }
 
   @Delete(':id')

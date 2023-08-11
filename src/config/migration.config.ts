@@ -3,5 +3,5 @@ import { databaseConfig } from './database.config';
 
 export default new DataSource({
   ...databaseConfig,
-  migrations: [__dirname + '/dist/migrations/*{.ts,.js}'],
+  migrations: ['/dist/migrations/*{.ts,.js}'],
 });

@@ -1,12 +1,6 @@
-import { CartLine } from './cartLine.entity';
+import { CartLine } from '../../cart-line/entities/cartLine.entity';
 import { User } from '../../users/entities/user.entity';
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToMany,
-  OneToOne,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, OneToMany, OneToOne } from 'typeorm';
 
 @Entity()
 export class Cart {
@@ -15,14 +9,13 @@ export class Cart {
 
   @OneToMany(() => CartLine, (cartLine) => cartLine.cart, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
+    nullable: true,
   })
   cartLines: CartLine[];
 
   @OneToOne(() => User, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
   })
   user: User;

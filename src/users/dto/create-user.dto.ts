@@ -5,8 +5,7 @@ import {
   IsDefined,
   MinLength,
   MaxLength,
-  IsOptionnal,
-  isBoolean,
+  IsOptional,
   IsEnum,
 } from 'class-validator';
 import { Purchase } from '../../purchases/entities/purchase.entity';
@@ -16,12 +15,12 @@ export class CreateUserDto {
   id: number;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MaxLength(50)
   firstName: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MaxLength(50)
   lastName: string;
 
@@ -39,27 +38,27 @@ export class CreateUserDto {
   hashedPassword: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MinLength(20)
   @MaxLength(255)
   address: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MinLength(10)
   @MaxLength(10)
   phoneNumber: string;
 
-  @IsOptionnal()
+  @IsOptional()
   cart: Cart;
 
-  @IsOptionnal()
+  @IsOptional()
   purchases: Purchase[];
 
   @IsString()
   @IsEnum(['admin', 'user'])
   role: string;
 
-  @isBoolean()
+  @IsOptional()
   isActive: boolean;
 }

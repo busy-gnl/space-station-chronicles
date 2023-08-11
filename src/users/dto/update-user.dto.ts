@@ -5,7 +5,7 @@ import {
   IsDefined,
   MinLength,
   MaxLength,
-  IsOptionnal,
+  IsOptional,
 } from 'class-validator';
 
 import { PartialType } from '@nestjs/mapped-types';
@@ -15,12 +15,12 @@ import { Cart } from '../../carts/entities/cart.entity';
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MaxLength(50)
   firstName: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MaxLength(50)
   lastName: string;
 
@@ -38,20 +38,23 @@ export class UpdateUserDto extends PartialType(CreateUserDto) {
   hashedPassword: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MinLength(20)
   @MaxLength(255)
   address: string;
 
   @IsString()
-  @IsOptionnal()
+  @IsOptional()
   @MinLength(10)
   @MaxLength(10)
   phoneNumber: string;
 
-  @IsOptionnal()
+  @IsOptional()
   cart: Cart;
 
-  @IsOptionnal()
+  @IsOptional()
   purchases: Purchase[];
+
+  @IsOptional()
+  isActive: boolean;
 }

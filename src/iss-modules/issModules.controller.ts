@@ -11,7 +11,7 @@ import { IssModulesService } from './issModules.service';
 // import { CreateIssModuleDto } from './dto/create-iss-module.dto';
 // import { UpdateIssModuleDto } from './dto/update-iss-module.dto';
 
-@Controller('modules')
+@Controller('iss-modules')
 export class IssModulesController {
   constructor(private readonly modulesService: IssModulesService) {}
   @Get()

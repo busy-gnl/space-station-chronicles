@@ -17,6 +17,7 @@ export class ProductsController {
 
   @Get()
   findAll() {
+    console.log('je suis la :>> ');
     return this.productsService.findAll();
   }
 

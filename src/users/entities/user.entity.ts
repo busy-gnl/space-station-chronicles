@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
   OneToOne,
   ManyToOne,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -36,13 +37,14 @@ export class User {
 
   @OneToOne(() => Cart, {
     cascade: true,
-    eager: true,
     onDelete: 'CASCADE',
     nullable: true,
   })
   cart: Cart;
 
-  @ManyToOne(() => Purchase, (purchase) => purchase.id, {
+  @OneToMany(() => Purchase, (purchase) => purchase.id, {
+    cascade: true,
+    onDelete: 'CASCADE',
     nullable: true,
   })
   purchases: Purchase[];

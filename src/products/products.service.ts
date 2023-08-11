@@ -13,11 +13,12 @@ export class ProductsService {
   ) {}
 
   async findAll(): Promise<Product[]> {
+    // console.log('object :>> ', await this.productsRepository.find());
     return await this.productsRepository.find();
   }
 
-  findOneById(id: number): Promise<Product | null> {
-    return this.productsRepository.findOneBy({ id });
+  async findOneById(id: number): Promise<Product | null> {
+    return await this.productsRepository.findOneBy({ id });
   }
 
   async create(createProductDto: CreateProductDto) {
