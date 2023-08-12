@@ -2,7 +2,7 @@
 import ApiMap from "@components/ApiMap/ApiMap";
 import { useState, useMemo } from "react";
 import MapContext from "../../contexts/MapContext";
-import Card from "../../components/crew/Card";
+import Crew from "../../components/crew/Crew";
 import "./Map.css";
 
 export default function Map() {
@@ -52,7 +52,7 @@ export default function Map() {
       </section>
       <h2>Equipage à bord de l'ISS</h2>
       <section className="map-crew-section">
-        <Card />
+        <Crew />
       </section>
     </div>
   );

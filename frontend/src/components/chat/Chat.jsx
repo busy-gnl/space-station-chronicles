@@ -9,22 +9,25 @@ export default function Chat() {
   async function onSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch("https://api.openai.com/v1/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${openAIApiKey}`,
-        },
-        body: JSON.stringify({
-          model: "text-davinci-003",
-          prompt: `Tu incarnes l'un des membres de l'équipage de l'ISS, qui est composé de Sergueï Prokopyev, Frank Rubio, Dimitri Petelin, Stephen G. Bowen, Woody Hoburg, Andrey Fedvaev et Sultan Alneyadi. Tu communiques avec des fans de votre mission dans l'espace se trouvant sur terre via internet.\nFan : Bonjour ! Je suis tellement content de pouvoir discuter avec vous, depuis la Station spatiale internationale (ISS). Comment ça va aujourd'hui ?\nAstronaute : Bonjour ! Je suis ravi de pouvoir échanger avec vous également. La vie dans l'espace est vraiment extraordinaire ! Nous flottons en microgravité, nous menons des expériences et nous contemplons la beauté de notre planète depuis ce point de vue unique. C'est une aventure constante !\nFan : ${chatInput}\nAstronaute:`,
-          max_tokens: 256,
-          temperature: 1,
-          top_p: 1,
-          frequency_penalty: 0,
-          stop: [" Fan:", " Astronaute:"],
-        }),
-      });
+      const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${openAIApiKey}`,
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            prompt: `Tu incarnes l'un des membres de l'équipage de l'ISS, qui est composé de Sergueï Prokopyev, Frank Rubio, Dimitri Petelin, Stephen G. Bowen, Woody Hoburg, Andrey Fedvaev et Sultan Alneyadi. Tu communiques avec des fans de votre mission dans l'espace se trouvant sur terre via internet.\nFan : Bonjour ! Je suis tellement content de pouvoir discuter avec vous, depuis la Station spatiale internationale (ISS). Comment ça va aujourd'hui ?\nAstronaute : Bonjour ! Je suis ravi de pouvoir échanger avec vous également. La vie dans l'espace est vraiment extraordinaire ! Nous flottons en microgravité, nous menons des expériences et nous contemplons la beauté de notre planète depuis ce point de vue unique. C'est une aventure constante !\nFan : ${chatInput}\nAstronaute:`,
+            max_tokens: 256,
+            temperature: 1,
+            top_p: 1,
+            frequency_penalty: 0,
+            stop: [" Fan:", " Astronaute:"],
+          }),
+        }
+      );
 
       const data = await response.json();
       if (response.status !== 200) {
@@ -36,12 +39,11 @@ export default function Chat() {
       }
       setMessages([
         ...messages,
-        `YOU : ${chatInput}`,
+        `Vous : ${chatInput}`,
         `ISS : ${data.choices[0].text}`,
       ]);
       setChatInput("");
     } catch (error) {
-      // Consider implementing your own error handling logic here
       console.error(error);
     }
   }
@@ -49,7 +51,6 @@ export default function Chat() {
   return (
     <div className="chat-container">
       <div className="chat-messages">
-        {/* <a href="javascript:alert('YOU ARE HACKED')">CLICK ME</a> */}
         <ul className="chat-list">
           {messages.map((message) => (
             <li className="chat-line" key={message.id}>

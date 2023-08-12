@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.18.1",
+    "axios": "^1.4.0",
     "dotenv": "^16.3.1",
     "google-maps-react-markers": "^1.2.3",
     "joi": "^17.9.2",
