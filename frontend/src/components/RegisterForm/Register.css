@@ -1,0 +1,36 @@
+.register {
+    width: 40vw;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 825px) {
+    .register {
+        width: 70vw;
+        margin: 0 auto;
+    }
+    
+}
+
+.register label {
+    text-align: start;
+}
+.register input {
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.register button {
+    border-radius: 10px;
+    height: 60px;
+    border-radius: 10px;
+    align-self: center;
+    padding: 5px 60px;
+    font-size: 17px;
+    margin-top: 1rem;
+}
+.register_form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

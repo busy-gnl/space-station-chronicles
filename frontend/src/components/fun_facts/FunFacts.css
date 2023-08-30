@@ -5,7 +5,8 @@
   align-items: center;
   gap: 2rem;
   background-color: var(--background-blur);
-  padding: 0.5rem;
+  padding: 1.5rem;
+
 }
 
 .fun-fact {

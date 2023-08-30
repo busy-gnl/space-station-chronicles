@@ -51,24 +51,28 @@ h3 {
   background-color: white;
   height: 100%;
 }
+
 nav {
   height: 100%;
+  width: 100%;
 }
 
 nav > ul {
   display: flex;
   height: 100%;
+  width: 100%;
   align-items: center;
 }
 
-nav > ul > li {
+.navline {
   display: flex;
   align-items: center;
   list-style-type: none;
+  height: 100%;
   margin: 1rem 1rem;
 }
 
-nav > ul > li > a {
+.navlink {
   text-decoration: none;
   font-style: bold;
   color: var(--links-color);
@@ -76,15 +80,50 @@ nav > ul > li > a {
   transition: 0.3s;
 }
 
-nav > ul > li:hover {
+.navline:hover {
   background-color: #ffffff;
   height: 100%;
   opacity: 1;
 }
 
-nav > ul > li > a:hover {
+.navlink:hover {
   text-decoration: none;
   color: black;
+}
+
+.navlink-button {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  font-style: bold;
+  color: var(--links-color);
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.navlink-button:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.navlink-end-container{
+  height: 100%;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.navlink-end-container > ul {
+display: flex;
+height: 100%;
+width: 100%;
+align-items: center;
 }
 
 footer {
@@ -93,7 +132,8 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  height: 10vh;
+  padding-top: 1rem;
+  min-height: 10vh;
   gap: 1rem;
   background-color: var(--background-color);
   color: var(--font-color);
@@ -120,17 +160,71 @@ footer {
   color: var(--links-color);
 }
 
-/* Tablet */
+.menu-button {
+  display: none;  /* Par défaut, le bouton est caché */
+}
 
-/* Desktop */
-@media only screen and (max-width: 480px) {
+
+
+/* Tablet */
+@media only screen and (max-width: 800px) {
+
+  .navline {
+    margin: 1rem 0rem;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 560px) {
+  .menu-button {
+    display: block;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: bold;
+    color: var(--links-color);
+    opacity: 0.7;
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
   nav {
     width: 100%;
   }
 
   nav > ul {
+    display: flex;
+    flex-direction: column;  /* Rend la liste verticale */
+    width: 100px;  /* Largeur du menu */
+    height: 70vh;  /* Hauteur totale */
+    position: fixed;  /* Fixe la position */
+    top: 0;
+    left: 0;
+    gap: 0;
+    background-color: black;  /* Couleur de fond */
+    overflow-y: auto;  /* Permet le défilement si le contenu dépasse la hauteur */
+    transition: all 0.5s;  /* Transition pour l'effet de glissement */
+    z-index: 10; /* Assure que le menu est au-dessus des autres éléments */
+  }
+
+  .navlink-end-container{
+  margin: 0;
+  }
+
+  .navlink-end-container > ul {
     width: 100%;
-    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  /* Affichez le menu lorsque isMenuOpen est vrai */
+  .nav-open {
+    display: block ;
   }
 
   nav > ul > li {
@@ -138,5 +232,9 @@ footer {
     align-items: center;
     list-style-type: none;
     margin: 1rem 0;
+  } 
+  
+  .nav-close {
+    display: none;
   }
 }

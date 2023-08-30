@@ -1,0 +1,21 @@
+/* Mobile */
+.shop-catalog-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Tablet */
+@media only screen and (min-width: 682px) {
+  .shop-catalog-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* Desktop */

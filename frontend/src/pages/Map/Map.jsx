@@ -47,7 +47,7 @@ export default function Map() {
           src="https://www.youtube.com/embed/4_OT4xFrjmM?autoplay=1&mute=1"
           title="Live from ISS"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </section>
       <h2>Equipage à bord de l'ISS</h2>

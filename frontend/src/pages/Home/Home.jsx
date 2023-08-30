@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import Slider from "../../components/slider/Slider";
 import Timer from "../../components/Timer/Timer";
-// import ContactForm from "../../components/contact_form/ContactForm";
 import Chat from "../../components/chat/Chat";
 import "./Home.css";
 
@@ -71,19 +70,9 @@ export default function Home() {
           alt="ISS en orbite"
         />
       </section>
-      <h2>Live : Vue de la Terre en direct depuis l'ISS</h2>
-      <section className="home-live-section">
-        <iframe
-          className="home-live-video"
-          src="https://www.youtube.com/embed/4_OT4xFrjmM?autoplay=1&mute=1"
-          title="Live from ISS"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        />
-      </section>
+
       <h2>Envoyez un message à l'équipage</h2>
       <section className="home-contact-section">
-        {/* <ContactForm /> */}
         <Chat />
       </section>
     </div>

@@ -37,27 +37,11 @@
   border-radius: var(--border-radius);
 }
 
-.home-live-section {
-  display: flex;
-  justify-content: center;
-}
-
-.home-live-video {
-  width: 80vw;
-  height: 80vh;
-  border-radius: var(--border-radius);
-}
-
-.home-live-video:hover {
-  cursor: pointer;
-}
-
 .home-contact-section {
   display: flex;
   justify-content: center;
-}
 
-/* Tablet */
+}
 
 /* Desktop */
 @media only screen and (min-width: 1025px) {
@@ -89,4 +73,28 @@
   .home-iss-orbit-img {
     width: 40vw;
   }
+
+  .home-live-section {
+    margin: auto;
+    width: 80vw;
+    display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--background-blur);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  
+  }
+  
+  .home-news {
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  
+  iframe {
+    min-width: 45%;
+
+  }
+  
 }

@@ -1,15 +1,16 @@
 /* Mobile */
 .chat-container {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   width: 80%;
-  background-color: antiquewhite;
+  background-color: #EFF1F5;
   border-radius: var(--border-radius);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .chat-messages {
-  min-height: 15vh;
+  min-height: 30vh;
   padding: 1rem;
   overflow: auto;
   flex: 1;
@@ -20,8 +21,8 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  color: black;
-  font-weight: bold;
+  color: #EFF1F5;
+  font-weight: 500;
   padding: 0;
   margin: 0;
 }
@@ -34,19 +35,19 @@
 /* User chat bubble*/
 .chat-list li:nth-child(2n + 1) {
   align-self: start;
-  background-color: aquamarine;
-  border-radius: 10px 10px 0px 10px;
+  background-color: #179299;
+  border-radius: 10px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-  box-shadow: 16px 16px aquamarine, 16px, 16px, 16px;
+  box-shadow: 16px 16px #179299, 16px, 16px, 16px;
 }
 
 /* ISS bot chat bubble*/
 .chat-list li:nth-child(2n) {
   align-self: end;
-  background-color: aqua;
-  border-radius: 10px 10px 10px 0px;
+  background-color: #054862;
+  border-radius: 10px;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-  box-shadow: -16px 16px aqua, 16px, 16px, 16px;
+  box-shadow: -16px 16px #054862, 16px, 16px, 16px;
 }
 
 /* 
