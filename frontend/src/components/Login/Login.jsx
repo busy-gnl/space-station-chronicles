@@ -38,7 +38,7 @@ function Login() {
       if (data.access_token) {
         // Stocker le token pour une utilisation ultérieure
         localStorage.setItem("token", data.access_token);
-
+        console.info("token :>> ", data.access_token);
         // Décoder le JWT pour obtenir l'ID de l'utilisateur
         const decodedToken = jwtDecode(data.access_token);
 

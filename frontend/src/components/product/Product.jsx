@@ -4,7 +4,8 @@ import Toast from "../Toast/Toast";
 import { CartContext } from "../../contexts/CartContextProvider";
 
 export default function Product({ product }) {
-  const { addProductToCart, cart, isLogged } = useContext(CartContext);
+  const { addProductToCart, updateProductInCart, cart, isLogged } =
+    useContext(CartContext);
   const { name, image, price, description, stock } = product;
   const [isToastVisible, setToastVisibility] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
@@ -20,7 +21,24 @@ export default function Product({ product }) {
     }
     console.info("cart :>> ", cart);
     try {
-      await addProductToCart(product);
+      // Vérifiez si le produit existe déjà dans le panier
+      if (cart && Array.isArray(cart.cartLines)) {
+        const existingProduct = cart.cartLines.find(
+          (item) => item.productId === product.id
+        );
+
+        if (existingProduct) {
+          // Si le produit existe déjà, augmentez simplement sa quantité
+          updateProductInCart(existingProduct.id, {
+            quantity: existingProduct.quantity + 1,
+          });
+          setToastMessage("+1 ajouté au panier");
+        }
+      } else {
+        // Sinon, ajoutez un nouveau produit au panier
+        addProductToCart(product);
+      }
+
       setToastMessage("Produit ajouté au panier");
     } catch (error) {
       console.error("Error adding product to cart:", error);

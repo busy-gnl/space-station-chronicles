@@ -22,6 +22,7 @@ export const getCartByUserId = async (userId) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
   const data = await response.json();
@@ -90,6 +91,7 @@ export const getCartWithProduct = async (cartId) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
   const data = await response.json();
@@ -98,4 +100,16 @@ export const getCartWithProduct = async (cartId) => {
     return data;
   }
   return new Error("Failed to get cart");
+};
+
+export const updateCartLine = async (cartLineId, updatedInfo) => {
+  const response = await fetch(`${backendURL}/cart-line/${cartLineId}`, {
+    method: "PATCH",
+    body: JSON.stringify(updatedInfo),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return response.json();
 };

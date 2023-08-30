@@ -164,7 +164,9 @@ footer {
   display: none;  /* Par défaut, le bouton est caché */
 }
 
-
+#website-name {
+  display: none;
+}
 
 /* Tablet */
 @media only screen and (max-width: 800px) {
@@ -181,12 +183,11 @@ footer {
     border: none;
     background: transparent;
     outline: none;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
     margin: 0;
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 32px;
     font-style: bold;
     color: var(--links-color);
     opacity: 0.7;
@@ -194,6 +195,20 @@ footer {
     margin-left: auto;
     margin-right: 1rem;
   }
+
+  #website-name {
+    margin: auto;
+    padding-left: 1rem;
+    display: block;
+  }
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
 
   nav {
     width: 100%;

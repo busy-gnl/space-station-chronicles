@@ -11,6 +11,7 @@ import {
   getCartWithProduct,
   addCartLine,
   removeProductFromCart,
+  updateCartLine,
 } from "../services/ApiService";
 
 const CartContext = createContext({
@@ -19,6 +20,7 @@ const CartContext = createContext({
   fetchCartWithProduct: () => {},
   addProductToCart: () => {},
   removeFromCart: () => {},
+  updateProductInCart: () => {},
 });
 
 function CartProvider({ children }) {
@@ -88,6 +90,19 @@ function CartProvider({ children }) {
     }
   };
 
+  const updateProductInCart = async (cartLineId, updatedInfo) => {
+    try {
+      const updatedCartLine = await updateCartLine(cartLineId, updatedInfo);
+      // Mettez à jour l'état du panier avec la ligne de panier mise à jour
+      dispatch({
+        type: "UPDATE_ITEM",
+        payload: { cartLineId, updatedCartLine },
+      });
+    } catch (error) {
+      console.error("An error occurred while updating the cart line:", error);
+    }
+  };
+
   const value = useMemo(
     () => ({
       cart: state.cart,
@@ -97,6 +112,7 @@ function CartProvider({ children }) {
       setIsLogged,
       fetchCart,
       fetchCartWithProduct,
+      updateProductInCart,
     }),
     [state.cart, addProductToCart, removeFromCart, isLogged]
   );

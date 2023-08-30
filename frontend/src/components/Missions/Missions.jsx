@@ -4,8 +4,9 @@ import axios from "axios";
 
 export default function Missions() {
   const backendURL = import.meta.env.VITE_BACKEND_URL;
-  const [research, setResearch] = useState([]);
-  const [missions, setMissions] = useState(research);
+  const [research, setResearch] = useState(null);
+  const [missions, setMissions] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${backendURL}/missions`)
@@ -18,19 +19,25 @@ export default function Missions() {
         console.error(err);
       });
   }, []);
+
   return (
     <div className="missions-container">
       <div className="mission-info">
-        <strong className="missions-domain">{research.domain} : </strong> <br />
-        <em>{research.description}</em>
+        {research && (
+          <>
+            <strong className="missions-domain">{research.domain} : </strong>{" "}
+            <br />
+            <em>{research.description}</em>
+          </>
+        )}
       </div>
       <div className="missions-button-container">
-        {missions.map((mission) => (
+        {missions.map((mission, index) => (
           <button
             className="missions-change-button"
             type="button"
             onClick={() => {
-              setResearch(missions[mission.id]);
+              setResearch(missions[index]);
             }}
           >
             {mission.domain}

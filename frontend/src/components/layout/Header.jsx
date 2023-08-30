@@ -82,6 +82,9 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        <h3 id="website-name" className={isMenuOpen ? "d-none" : "d-block"}>
+          Space Station Chronicles
+        </h3>
         <button
           type="button"
           className="menu-button"
