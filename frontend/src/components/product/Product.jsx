@@ -1,29 +1,19 @@
 import "./Product.css";
 import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContextProvider";
 import Toast from "../Toast/Toast";
-import { CartContext } from "../../contexts/CartContextProvider";
 
 export default function Product({ product }) {
-  const { addProductToCart, cart, isLogged } = useContext(CartContext);
+  const { addProductToCart } = useContext(UserContext);
   const { name, image, price, description, stock } = product;
   const [isToastVisible, setToastVisibility] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
-  const handleAddToCart = async () => {
-    if (!isLogged) {
-      setToastMessage("Vous devez être connecté pour ajouter un produit");
-      setToastVisibility(true);
-      setTimeout(() => {
-        setToastVisibility(false);
-      }, 3000);
-      return;
-    }
-    console.info("cart :>> ", cart);
+  const handleAddToCart = () => {
     try {
-      await addProductToCart(product);
+      addProductToCart(product);
       setToastMessage("Produit ajouté au panier");
     } catch (error) {
-      console.error("Error adding product to cart:", error);
       setToastMessage("Erreur lors de l'ajout du produit au panier");
     } finally {
       setToastVisibility(true);

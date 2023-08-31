@@ -9,11 +9,11 @@ import Timeline from "@pages/Timeline/Timeline";
 import Auth from "@pages/Authentification/Auth";
 import Shop from "@pages/Shop/Shop";
 import Cart from "@pages/Cart/Cart";
-import { CartProvider } from "./contexts/CartContextProvider";
+import { UserContextProvider } from "./contexts/UserContextProvider";
 
 function App() {
   return (
-    <CartProvider>
+    <UserContextProvider>
       <div className="App">
         <Layout>
           <Routes>
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         </Layout>
       </div>
-    </CartProvider>
+    </UserContextProvider>
   );
 }
 
