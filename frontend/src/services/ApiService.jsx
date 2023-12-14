@@ -71,31 +71,74 @@ export async function addCartLine(cartLineData) {
   }
 }
 
-export const removeProductFromCart = async (cartLineId) => {
-  const response = await fetch(`${backendURL}/cart-line/${cartLineId}`, {
-    method: "DELETE",
+export const getCartWithProduct = async (cartId) => {
+  const response = await fetch(`${backendURL}/carts/${cartId}`, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
   if (!response.ok) {
-    throw new Error("Failed to remove cart line");
+    console.error("Failed to fetch cart with product:", response);
+    throw new Error("Failed to fetch cart with product");
   }
   return response.json();
 };
 
-export const getCartWithProduct = async (cartId) => {
-  const response = await fetch(`${backendURL}/carts/user/full/${cartId}`, {
+export const removeProductFromCart = async (cartId, productId) => {
+  const response = await fetch(
+    `${backendURL}/carts/${cartId}/products/${productId}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+  if (!response.ok) {
+    console.error("Failed to remove product from cart:", response);
+    throw new Error("Failed to remove product from cart");
+  }
+  return response.json();
+};
+
+// Fetch the user's profile information
+export const fetchUserProfile = async (userId) => {
+  const response = await fetch(`${backendURL}/users/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   });
-  const data = await response.json();
-  if (response.ok) {
-    console.info("data :>> ", data);
-    return data;
+
+  if (!response.ok) {
+    console.error("Failed to fetch user profile:", response);
+    throw new Error("Failed to fetch user profile");
   }
-  return new Error("Failed to get cart");
+
+  const data = await response.json();
+  return data;
+};
+
+// User profile update
+export const updateUserProfile = async (userId, updatedProfile) => {
+  const response = await fetch(`${backendURL}/users/${userId}`, {
+    method: "PUT",
+    body: JSON.stringify(updatedProfile),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+
+  if (!response.ok) {
+    console.error("Failed to update user profile:", response);
+    throw new Error("Failed to update user profile");
+  }
+
+  const data = await response.json();
+  return data;
 };

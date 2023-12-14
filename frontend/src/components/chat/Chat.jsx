@@ -90,7 +90,6 @@ export default function Chat() {
           value={chatInput}
           placeholder="Chat with the crew!"
         />
-        -- bouton d'envoi du message sous forme de fusée --
         <button className="chat-button" type="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import Toast from "../Toast/Toast";
 import "./Register.css";
 
 export default function Register() {
   const backendURL = import.meta.env.VITE_BACKEND_URL;
+  const [isToastVisible, setToastVisibility] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [shouldRedirect, setShouldRedirect] = useState(false);
   const [dataForm, setDataForm] = useState({
     firstName: "",
     lastName: "",
@@ -38,7 +43,20 @@ export default function Register() {
       phoneNumber: "",
       hashedPassword: "",
     });
+    setToastMessage("Vous êtes inscrit, veuillez vous connecter");
+    setToastVisibility(true);
+    setTimeout(() => {
+      setToastVisibility(false);
+    }, 3000);
+    setTimeout(() => {
+      setShouldRedirect(true);
+    }, 3000);
   };
+
+  if (shouldRedirect) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <div className="register">
       <h2>Bienvenue créer ton profil !</h2>
@@ -73,7 +91,7 @@ export default function Register() {
           onChange={handleChange}
         />
 
-        <label htmlFor="lastname">Nom (facultatif)</label>
+        <label htmlFor="lastname">Nom de famille (facultatif)</label>
         <input
           type="text"
           name="lastname"
@@ -107,6 +125,7 @@ export default function Register() {
           Register
         </button>
       </form>
+      <Toast show={isToastVisible} message={toastMessage} />
     </div>
   );
 }

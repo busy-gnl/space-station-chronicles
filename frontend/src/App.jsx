@@ -9,6 +9,7 @@ import Timeline from "@pages/Timeline/Timeline";
 import Auth from "@pages/Authentification/Auth";
 import Shop from "@pages/Shop/Shop";
 import Cart from "@pages/Cart/Cart";
+import Profile from "@pages/Profile/Profile";
 import { UserContextProvider } from "./contexts/UserContextProvider";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </Layout>
       </div>

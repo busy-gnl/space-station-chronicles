@@ -23,10 +23,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-background-color: var(--background-blur);
-border-radius: var(--border-radius);
-padding: 2rem;
-
+  background-color: var(--background-blur);
+  border-radius: var(--border-radius);
+  padding: 2rem;
 }
 
 .chronicles-news {
@@ -39,7 +38,12 @@ padding: 2rem;
 iframe {
   aspect-ratio: 16/9;
   height: 100%;
-  overflow-y: auto; 
+  overflow-y: auto;
+}
+
+.pluginSkinLight {
+  display: flex;
+  justify-content: center;
 }
 
 .chronicles-fun-facts-section {
@@ -62,23 +66,22 @@ iframe {
 
 /* Tablet */
 @media only screen and (min-width: 1025px) {
-.chronicles-news-section {
-  margin: auto;
-  width: 80vw;
-background-color: var(--background-blur);
-border-radius: var(--border-radius);
-/* padding: 2rem; */
+  .chronicles-news-section {
+    margin: auto;
+    width: 80vw;
+    background-color: var(--background-blur);
+    border-radius: var(--border-radius);
+    /* padding: 2rem; */
+  }
 
-}
+  .chronicles-news {
+    height: 100%;
+  }
 
-.chronicles-news {
-height: 100%;
-}
-
-iframe {
-  aspect-ratio: 16/9;
-  overflow-y: auto; 
-}
+  iframe {
+    aspect-ratio: 16/9;
+    overflow-y: auto;
+  }
 }
 /* Desktop */
 @media only screen and (min-width: 1025px) {

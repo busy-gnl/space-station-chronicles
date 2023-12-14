@@ -1,0 +1,44 @@
+.profile-page {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+label {
+    text-align: start;
+}
+
+input {
+    height: 60px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.profile-update-button {
+    border-radius: 10px;
+    height: 60px;
+    border-radius: 10px;
+    align-self: center;
+    padding: 5px 60px;
+    font-size: 17px;
+    margin-top: 1rem;
+}
+
+.success-update {
+    background-color: antiquewhite;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--background-color);
+
+
+}

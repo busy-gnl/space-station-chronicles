@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import { Navigate } from "react-router-dom";
 import jwtDecode from "jwt-decode"; // eslint-disable-line
+import { Navigate } from "react-router-dom";
 import Toast from "../Toast/Toast";
-import { CartContext } from "../../contexts/CartContextProvider";
+import { UserContext } from "../../contexts/UserContextProvider";
 import "./Login.css";
 
 function Login() {
-  const { setIsLogged } = useContext(CartContext);
+  const { setIsLogged } = useContext(UserContext);
   const backendURL = import.meta.env.VITE_BACKEND_URL;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

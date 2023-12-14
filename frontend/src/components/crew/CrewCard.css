@@ -10,18 +10,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 .crew-card {
-width: 80%;
-margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
+.crew-image {
+  object-fit: cover;
+}
 
 .crew-button {
   width: 80%;
-display: flex;
-gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .crew-div {
@@ -66,8 +68,8 @@ gap: 1rem;
 @media only screen and (min-width: 1370px) {
   .crew-button {
     width: 90%;
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
   }
 }
 @media only screen and (min-width: 604px) {

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { CartContext } from "../../contexts/CartContextProvider";
+import { UserContext } from "../../contexts/UserContextProvider";
 
 export default function Header() {
-  const { isLogged, setIsLogged } = useContext(CartContext);
+  const { isLogged, setIsLogged } = useContext(UserContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = (event) => {
@@ -59,6 +59,13 @@ export default function Header() {
                     Cart
                   </Link>
                 </li>
+                {isLogged && (
+                  <li className="navline">
+                    <Link className="navlink" to="/profile">
+                      Profile
+                    </Link>
+                  </li>
+                )}
                 {isLogged && (
                   <li className="navline">
                     <button

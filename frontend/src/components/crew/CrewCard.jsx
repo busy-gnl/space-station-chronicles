@@ -5,9 +5,9 @@ export default function CrewCard({ picture, age, nation, name, description }) {
   return (
     <div className="crew-div">
       <div className="card-left">
-        <img src={picture} alt="" />
+        <img src={picture} alt="" className="crew-image" />
         <h2>{age} ans</h2>
-        <img src={nation} alt="" />
+        <img src={nation} alt="" className="crew-image" />
       </div>
       <div className="card-right">
         <h2 className="crew-member-name">{name}</h2>

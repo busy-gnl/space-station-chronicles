@@ -12,7 +12,7 @@ export default function ApiMap() {
       lng: coords.longitude,
     },
   ];
-  const googleMapsApiKey = import.meta.env.GOOGLEMAPS_API_KEY;
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLEMAPS_API_KEY;
 
   return (
     <div className="map-div">

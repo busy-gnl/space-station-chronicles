@@ -38,7 +38,6 @@ const userReducer = (state, action) => {
 export function UserContextProvider({ children }) {
   const [state, dispatch] = useReducer(userReducer, initialState);
   const [isLogged, setIsLogged] = useState(false);
-  const userId = localStorage.getItem("userId"); // eslint-disable-line
 
   useEffect(() => {
     const existingCart = localStorage.getItem("cart");

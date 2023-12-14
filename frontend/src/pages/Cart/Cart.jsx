@@ -11,12 +11,22 @@ export default function Cart() {
     removeFromCart(productId);
   };
 
-  const handleQuantityChange = (e, productId) => {
-    const newQuantity = parseInt(e.target.value, 10);
+  const handleQuantityChange = (action, productId, inputElement) => {
+    let newQuantity;
+    const currentValue = parseInt(inputElement.value, 10);
+
+    if (action === "increase") {
+      newQuantity = currentValue + 1;
+    } else if (action === "decrease") {
+      newQuantity = Math.max(currentValue - 1, 1);
+    } else if (action === "input") {
+      newQuantity = parseInt(inputElement.value, 10);
+    }
+
+    inputElement.value = newQuantity; // eslint-disable-line no-param-reassign
     updateProductQuantity(productId, newQuantity);
   };
 
-  // Calcul du prix total du panier, arrondi au centime près
   const totalPrice = parseFloat(
     cart
       .reduce((acc, product) => acc + product.price * product.quantity, 0)
@@ -31,8 +41,7 @@ export default function Cart() {
           {cart.map((product) => {
             const productTotalPrice = parseFloat(
               (product.price * product.quantity).toFixed(2)
-            ); // Prix cumulé par produit, arrondi
-
+            );
             return (
               <div className="cart-line" key={product.id}>
                 <img
@@ -42,18 +51,55 @@ export default function Cart() {
                 />
                 <div className="cart-infos">
                   <span className="cart-product-name">{product.name}</span>
-                  <span className="cart-product-price">
-                    {product.price.toFixed(2)} €
-                  </span>
-                  <span className="cart-product-total-price">
-                    {productTotalPrice.toFixed(2)} €
-                  </span>
-                  <input
-                    type="number"
-                    value={product.quantity}
-                    onChange={(e) => handleQuantityChange(e, product.id)}
-                    min="1"
-                  />
+                  <div className="cart-price-infos">
+                    <span className="cart-product-price">
+                      Prix unitaire : {product.price.toFixed(2)} €
+                    </span>
+                    <span className="cart-product-total-price">
+                      Total produit : {productTotalPrice.toFixed(2)} €
+                    </span>
+                  </div>
+                  <div className="cart-quantity">
+                    <label htmlFor="quantity">Quantité :</label>
+                    <button
+                      type="button"
+                      className="button-quantity"
+                      onClick={(e) =>
+                        handleQuantityChange(
+                          "decrease",
+                          product.id,
+                          e.target.previousSibling
+                        )
+                      }
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      min="1"
+                      max="100"
+                      className="custom-number-input"
+                      value={product.quantity}
+                      onChange={(e) =>
+                        handleQuantityChange("input", product.id, e.target)
+                      }
+                    />
+                    <button
+                      type="button"
+                      className="button-quantity"
+                      onClick={(e) =>
+                        handleQuantityChange(
+                          "increase",
+                          product.id,
+                          e.target.nextSibling
+                        )
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div className="cart-buttons">
                   <button

@@ -8,8 +8,8 @@ import React, {
 import { cartReducer, initialState } from "./CartReducer";
 import {
   getCartByUserId,
-  getCartWithProduct,
   addCartLine,
+  getCartWithProduct,
   removeProductFromCart,
 } from "../services/ApiService";
 
